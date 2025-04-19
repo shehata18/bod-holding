@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us - BOD Holdings</title>
+        <meta name="description" content="Learn about BOD Holdings, our mission, vision, and leadership team.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+
+    <body class="font-sans">
+        <!-- Header (Same as index.html) -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="about.html" class="text-blue-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="subsidiaries.html" class="text-gray-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block py-2 text-blue-800 hover:text-blue-600">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-gray-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Page Banner -->
+        <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-black">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    alt="Modern Office Interior"
+                    class="absolute inset-0 w-full h-full object-cover object-center opacity-70">
+                <!-- Dark overlay -->
+                <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="container mx-auto px-4 relative z-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        <span class="text-blue-500">BOD</span>
+                        <span class="text-white">Holdings</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed mb-12">
+                        Learn about our company's history, mission, vision, and the team behind our success.
+                    </p>
+                    <div class="flex flex-col md:flex-row justify-center gap-6">
+                        <a href="#our-story"
+                            class="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition duration-300">
+                            Discover Our Journey
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#leadership"
+                            class="inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white border-2 border-white rounded-full hover:bg-white hover:text-blue-900 transition duration-300">
+                            Meet Our Team
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="absolute -left-32 top-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -right-32 bottom-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </section>
+
+        <style>
+            .blur-3xl {
+                --tw-blur: blur(64px);
+                filter: var(--tw-blur);
+            }
+        </style>
+
+        <!-- About Us Content -->
+        <section class="py-16 bg-white" id="our-story">
+            <div class="container mx-auto px-4">
+                <!-- Our Story Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                    <div class="relative order-2 lg:order-1">
+                        <!-- Main Image -->
+                        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
+                            alt="BOD Holdings Office Building"
+                            class="rounded-lg shadow-2xl w-full h-[600px] object-cover z-10 relative">
+
+                        <!-- Decorative Elements -->
+                        <div
+                            class="absolute -bottom-6 -right-6 bg-blue-800 text-white py-4 px-6 rounded-lg shadow-lg z-20">
+                            <p class="text-lg font-medium">Established in 2005</p>
+                        </div>
+                        <div
+                            class="absolute -top-6 -left-6 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+                        </div>
+                        <div
+                            class="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2">
+                        <div class="space-y-6">
+                            <div class="relative inline-block group">
+                                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+                                    Our Story
+                                </h2>
+                                <!-- Animated underline -->
+                                <div class="absolute left-0 bottom-0 w-full">
+                                    <div class="h-1 bg-blue-600 transform origin-left transition-all duration-300 ease-out 
+                                                group-hover:scale-x-110 group-hover:bg-blue-500"></div>
+                                    <div class="h-px bg-blue-400/50 mt-0.5 transform origin-left transition-all duration-300 ease-out 
+                                                group-hover:scale-x-150 group-hover:bg-blue-400/30"></div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                BOD Holdings was established in 2005 with a vision to create a diversified investment
+                                company
+                                that would drive economic growth across multiple sectors. What began as a small
+                                investment
+                                firm has grown into a major holding company with subsidiaries spanning across various
+                                industries.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Over the years, we have cultivated a reputation for strategic investments, operational
+                                excellence, and sustainable growth. Our success is built on our ability to identify
+                                promising
+                                opportunities, nurture businesses, and create long-term value for our stakeholders.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Today, BOD Holdings stands as a testament to the power of visionary leadership,
+                                strategic
+                                planning, and unwavering commitment to excellence.
+                            </p>
+                            <div class="mt-8 space-x-4">
+                                <a href="#mission"
+                                    class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors duration-300">
+                                    Learn More About Our Mission
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @keyframes blob {
+                        0% {
+                            transform: translate(0px, 0px) scale(1);
+                        }
+
+                        33% {
+                            transform: translate(30px, -50px) scale(1.1);
+                        }
+
+                        66% {
+                            transform: translate(-20px, 20px) scale(0.9);
+                        }
+
+                        100% {
+                            transform: translate(0px, 0px) scale(1);
+                        }
+                    }
+
+                    .animate-blob {
+                        animation: blob 7s infinite;
+                    }
+
+                    .animation-delay-2000 {
+                        animation-delay: 2s;
+                    }
+                </style>
+
+                <!-- Mission & Vision -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="text-blue-800 text-4xl mb-4">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+                        <p class="text-gray-600">To create sustainable value for our stakeholders through strategic
+                            investments, operational excellence, and responsible business practices. We aim to build
+                            thriving businesses that contribute positively to the communities we serve.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <div class="text-blue-800 text-4xl mb-4">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+                        <p class="text-gray-600">To be a leading holding company recognized for excellence in investment
+                            strategy, business development, and sustainable growth across diverse sectors, while
+                            maintaining the highest standards of corporate governance and social responsibility.</p>
+                    </div>
+                </div>
+
+                <!-- Core Values -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Core Values</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="text-blue-800 text-4xl mb-4 flex justify-center">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Integrity</h3>
+                            <p class="text-gray-600">We conduct our business with the highest ethical standards,
+                                honesty, and transparency.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="text-blue-800 text-4xl mb-4 flex justify-center">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Excellence</h3>
+                            <p class="text-gray-600">We strive for excellence in everything we do, continuously raising
+                                the bar for performance.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="text-blue-800 text-4xl mb-4 flex justify-center">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Innovation</h3>
+                            <p class="text-gray-600">We embrace innovation and creative thinking to drive growth and
+                                overcome challenges.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div class="text-blue-800 text-4xl mb-4 flex justify-center">
+                                <i class="fa-solid fa-hands-helping"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Responsibility</h3>
+                            <p class="text-gray-600">We are committed to social responsibility and sustainable business
+                                practices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Team -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Leadership Team</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Team Member 1 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                                alt="CEO Name" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-1">John Smith</h3>
+                                <p class="text-blue-600 mb-4">Chief Executive Officer</p>
+                                <p class="text-gray-600 mb-4">John has over 25 years of experience in investment
+                                    management and corporate leadership. He has been with BOD Holdings since its
+                                    inception.</p>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 2 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                                alt="CFO Name" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-1">Sarah Johnson</h3>
+                                <p class="text-blue-600 mb-4">Chief Financial Officer</p>
+                                <p class="text-gray-600 mb-4">Sarah brings 20 years of financial expertise to BOD
+                                    Holdings, with a strong background in corporate finance and investment strategy.</p>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Team Member 3 -->
+                        <div
+                            class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                alt="COO Name" class="w-full h-64 object-cover object-center">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-1">Michael Chen</h3>
+                                <p class="text-blue-600 mb-4">Chief Operations Officer</p>
+                                <p class="text-gray-600 mb-4">Michael has led operational excellence initiatives across
+                                    multiple industries for over 15 years, driving efficiency and growth.</p>
+                                <div class="flex space-x-3">
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-linkedin"></i>
+                                    </a>
+                                    <a href="#" class="text-blue-800 hover:text-blue-600">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Milestones -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Our Milestones</h2>
+
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-800">
+                    </div>
+
+                    <!-- Milestone 1 -->
+                    <div class="relative mb-16">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 pr-8 md:text-right mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Company Founded</h3>
+                                <p class="text-gray-600">BOD Holdings was established with a vision to create a
+                                    diversified investment portfolio.</p>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                <div
+                                    class="bg-blue-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl shadow-lg">
+                                    1
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 pl-0 md:pl-8">
+                                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                                    <span class="font-bold text-blue-800">2005</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative mb-16">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 pr-0 md:pr-8 md:text-right order-2 md:order-1">
+                                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                                    <span class="font-bold text-blue-800">2010</span>
+                                </div>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                <div
+                                    class="bg-blue-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl shadow-lg">
+                                    2
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 pl-8 order-1 md:order-2 mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">First Major Acquisition</h3>
+                                <p class="text-gray-600">Acquired our first major subsidiary, expanding into the real
+                                    estate sector.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative mb-16">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 pr-8 md:text-right mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">International Expansion</h3>
+                                <p class="text-gray-600">BOD Holdings expanded operations to international markets
+                                    across three continents.</p>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                <div
+                                    class="bg-blue-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl shadow-lg">
+                                    3
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 pl-0 md:pl-8">
+                                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                                    <span class="font-bold text-blue-800">2015</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative">
+                        <div class="md:flex items-center">
+                            <div class="md:w-1/2 pr-0 md:pr-8 md:text-right order-2 md:order-1">
+                                <div class="bg-white p-4 rounded-lg shadow-md inline-block">
+                                    <span class="font-bold text-blue-800">2022</span>
+                                </div>
+                            </div>
+                            <div
+                                class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                <div
+                                    class="bg-blue-800 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl shadow-lg">
+                                    4
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 pl-8 order-1 md:order-2 mb-6 md:mb-0">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Diversification into Technology</h3>
+                                <p class="text-gray-600">Launched our technology division with investments in emerging
+                                    tech startups and digital transformation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">BOD Holdings in Numbers</h2>
+                    <p class="text-xl max-w-3xl mx-auto">Our achievements over the years are reflected in our impressive
+                        statistics.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="counter" data-target="18">0</span>
+                        </div>
+                        <p class="text-xl">Years of Experience</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="counter" data-target="12">0</span>
+                        </div>
+                        <p class="text-xl">Subsidiary Companies</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="counter" data-target="6">0</span>
+                        </div>
+                        <p class="text-xl">Business Sectors</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-2">
+                            <span class="counter" data-target="850">0</span>
+                            <span class="text-2xl">+</span>
+                        </div>
+                        <p class="text-xl">Employees Worldwide</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Same as index.html) -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script>
+            // Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 50; // Increased for slower animation (was 200)
+            const updateInterval = 50; // Add delay between updates in milliseconds
+
+            counters.forEach(counter => {
+                const animate = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animate, updateInterval); // Added delay between updates
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                animate();
+            });
+
+            // Intersection Observer to trigger counter animation when in view
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.counter');
+                        counters.forEach(counter => {
+                            counter.innerText = '0';
+                            const animate = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const count = +counter.innerText;
+                                const increment = target / speed;
+
+                                if (count < target) {
+                                    counter.innerText = Math.ceil(count + increment);
+                                    setTimeout(animate, updateInterval); // Added delay between updates
+                                } else {
+                                    counter.innerText = target;
+                                }
+                            };
+                            animate();
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Start observing the statistics section
+            const statsSection = document.querySelector('.statistics');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        </script>
+    </body>
+
+</html>

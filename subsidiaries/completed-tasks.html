@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Completed Tasks - BOD Holdings</title>
+        <meta name="description"
+            content="Completed Tasks (مؤسسة المهام المنجزة التجارية) provides efficient business solutions and commercial services.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../subsidiaries.html"
+                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="relative bg-blue-900 text-white py-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('../images/CT%20Company.jpg')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Completed Tasks</h1>
+                <p class="text-xl max-w-3xl">مؤسسة المهام المنجزة التجارية - Efficient business solutions and
+                    comprehensive commercial services.</p>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="../images/CT%20Company.jpg" alt="Completed Tasks Logo"
+                            class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About Completed Tasks</h2>
+                        <p class="text-gray-600 mb-4">
+                            مؤسسة المهام المنجزة التجارية (Completed Tasks) is a dynamic business solutions provider
+                            dedicated to helping organizations streamline operations, enhance efficiency, and achieve
+                            their strategic objectives through targeted commercial services.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            With a focus on delivering tangible results and measurable business improvements, CT has
+                            established itself as a trusted partner for businesses across various sectors looking to
+                            optimize their performance and growth potential.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Business Consultation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Process Optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Commercial Services</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Project Management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Business Development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Business Solutions</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Strategic Consulting</h3>
+                            <p class="text-gray-600">
+                                Expert guidance on business strategy, market positioning, and organizational development
+                                to help businesses achieve sustainable growth and competitive advantage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-cogs text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Process Optimization</h3>
+                            <p class="text-gray-600">
+                                Comprehensive assessment and improvement of business processes to enhance efficiency,
+                                reduce costs, and maximize operational productivity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-tasks text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Project Management</h3>
+                            <p class="text-gray-600">
+                                Professional project planning, execution, and monitoring services to ensure successful
+                                delivery of business initiatives within scope, time, and budget constraints.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-handshake text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Business Development</h3>
+                            <p class="text-gray-600">
+                                Strategic business growth services including market analysis, partnership development,
+                                and implementation of expansion strategies to capture new opportunities.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-file-contract text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Commercial Services</h3>
+                            <p class="text-gray-600">
+                                Comprehensive commercial support including contract management, procurement assistance,
+                                vendor relations, and commercial strategy implementation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-users text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Organizational Enhancement</h3>
+                            <p class="text-gray-600">
+                                Targeted strategies to improve organizational structure, team performance, and workplace
+                                culture to drive business effectiveness and employee engagement.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Completed Tasks</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Proven Results</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Our track record speaks for itself, with measurable improvements in business performance and
+                            efficiency for our diverse client portfolio.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Expert Team</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Our team of experienced business consultants and industry specialists bring valuable
+                            insights and practical solutions to every engagement.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Tailored Approach</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            We recognize that every business is unique, which is why we customize our solutions to
+                            address your specific challenges and objectives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Enhance Your Business Performance?</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-8">
+                    Contact Completed Tasks today to discuss how our business solutions can help your organization
+                    achieve its full potential.
+                </p>
+                <a href="../contact.html"
+                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Get
+                    in Touch</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                            </li>
+                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+
+</html>

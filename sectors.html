@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Business Sectors - BOD Holdings</title>
+        <meta name="description"
+            content="Explore the diverse business sectors where BOD Holdings operates across multiple industries.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- Add modern icon pack -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Add AOS for scroll animations -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/BOD%20Logo.jpg" alt="BOD Holdings Logo" class="h-10 mr-2">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="subsidiaries.html" class="text-gray-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="sectors.html" class="text-blue-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-gray-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-blue-800 hover:text-blue-600">Sectors</a>
+                <a href="news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Enhanced Banner with Curved Design and Animations -->
+        <section
+            class="relative min-h-[80vh] bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0">
+                <div
+                    class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob">
+                </div>
+                <div
+                    class="absolute top-20 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+                </div>
+                <div
+                    class="absolute bottom-0 left-1/2 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000">
+                </div>
+            </div>
+
+            <!-- Curved Overlay -->
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3')] bg-cover bg-center opacity-10">
+            </div>
+
+            <!-- Floating Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="floating-icon left-[10%] top-[20%]">
+                    <i class="fas fa-microchip text-4xl text-blue-200 opacity-20"></i>
+                </div>
+                <div class="floating-icon left-[85%] top-[40%]">
+                    <i class="fas fa-chart-line text-4xl text-blue-200 opacity-20"></i>
+                </div>
+                <div class="floating-icon left-[20%] top-[70%]">
+                    <i class="fas fa-industry text-4xl text-blue-200 opacity-20"></i>
+                </div>
+                <div class="floating-icon left-[75%] top-[15%]">
+                    <i class="fas fa-heartbeat text-4xl text-blue-200 opacity-20"></i>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="container mx-auto px-4 h-full relative z-10">
+                <div class="flex flex-col justify-center items-center h-full py-20">
+                    <!-- Animated Title -->
+                    <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                        <h1
+                            class="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
+                            Our Business Sectors
+                        </h1>
+                        <div class="w-24 h-2 bg-blue-400 mx-auto rounded-full mb-8"></div>
+                    </div>
+
+                    <!-- Animated Description -->
+                    <div class="max-w-4xl text-center" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-xl md:text-2xl leading-relaxed text-blue-100">
+                            BOD Holdings operates across multiple key industries, providing specialized expertise and
+                            innovative solutions in each sector.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Introduction -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <div class="text-5xl text-blue-800 mb-8">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8">Diverse Portfolio, Focused Expertise</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed">BOD Holdings has strategically expanded its
+                        operations into various industries, allowing us to diversify our investment portfolio while
+                        maintaining specialized expertise in each sector. Our subsidiaries operate independently while
+                        benefiting from the resources, experience, and synergies of the BOD Holdings group.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Sector - Enhanced -->
+        <section id="technology" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <div class="bg-white p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Technology</h2>
+                            <p class="text-gray-600 mb-4">Our technology division is at the forefront of digital
+                                innovation, developing cutting-edge solutions for businesses and consumers. We invest in
+                                emerging technologies and digital transformation to drive growth and efficiency.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Software Development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Cloud Solutions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Cybersecurity</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Artificial Intelligence</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Digital Transformation</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our technology companies deliver innovative solutions to
+                                clients across various industries, helping them navigate the digital landscape and
+                                achieve their business objectives.</p>
+
+                            <a href="subsidiaries.html#technology"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Technology Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3"
+                            alt="Technology Solutions"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finance Sector - Enhanced -->
+        <section id="finance" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <div class="bg-gray-50 p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-br-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Finance</h2>
+                            <p class="text-gray-600 mb-4">Our financial services division provides comprehensive
+                                solutions for individuals, businesses, and institutions. With a focus on innovation and
+                                client-centered approaches, we deliver value through strategic financial management and
+                                investment.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Investment Management</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Corporate Finance</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Wealth Advisory</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Capital Markets</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Financial Planning</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our financial services companies help clients navigate complex
+                                financial landscapes and achieve their financial goals through personalized strategies
+                                and expert guidance.</p>
+
+                            <a href="subsidiaries.html#finance"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Finance Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3"
+                            alt="Financial Services"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manufacturing Sector - Enhanced -->
+        <section id="manufacturing" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <div class="bg-white p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Manufacturing</h2>
+                            <p class="text-gray-600 mb-4">Our manufacturing division produces high-quality products for
+                                domestic and international markets. By combining advanced technology with efficient
+                                processes, we deliver superior products that meet the highest standards of quality and
+                                reliability.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Industrial Equipment</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Consumer Goods</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Building Materials</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Specialized Components</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Supply Chain Management</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our manufacturing companies leverage cutting-edge technology
+                                and lean processes to create products that meet the evolving needs of markets and
+                                customers worldwide.</p>
+
+                            <a href="subsidiaries.html#manufacturing"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Manufacturing Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3"
+                            alt="Manufacturing Facilities"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Healthcare Sector - Enhanced -->
+        <section id="healthcare" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <div class="bg-gray-50 p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-br-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Healthcare</h2>
+                            <p class="text-gray-600 mb-4">Our healthcare division is dedicated to improving patient
+                                outcomes and healthcare delivery through innovative medical services and technologies.
+                                We operate a network of facilities and invest in cutting-edge healthcare solutions to
+                                address evolving healthcare needs.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Medical Facilities</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Healthcare Technology</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Pharmaceutical Development</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Patient Care Services</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Medical Research</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our healthcare companies are committed to enhancing healthcare
+                                accessibility, quality, and efficiency through innovative approaches and
+                                patient-centered care.</p>
+
+                            <a href="subsidiaries.html#healthcare"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Healthcare Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3"
+                            alt="Healthcare Facilities"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Automotive Sector - Enhanced -->
+        <section id="automotive" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <div class="bg-white p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Automotive</h2>
+                            <p class="text-gray-600 mb-4">Our automotive division focuses on premium automotive sales,
+                                service, and customization with an emphasis on luxury and performance vehicles. We
+                                deliver exceptional customer experiences through innovative approaches to automotive
+                                retail and service.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Premium Vehicle Sales</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Performance Customization</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Specialized Automotive Service</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Genuine Parts & Accessories</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Luxury Vehicle Experience</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our automotive businesses deliver exceptional customer
+                                experience with premium vehicles, specialized service, and custom performance
+                                enhancements.</p>
+
+                            <a href="subsidiaries.html#automotive"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Automotive Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3"
+                            alt="Automotive Solutions"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hospitality Sector - Enhanced -->
+        <section id="hospitality" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <div class="bg-gray-50 p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-br-full -z-1"></div>
+                            <div class="text-blue-800 text-6xl mb-8">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h2 class="text-4xl font-bold text-gray-800 mb-6">Hospitality</h2>
+                            <p class="text-gray-600 mb-4">Our hospitality division operates premium dining
+                                establishments and catering services that offer exceptional cuisine and memorable
+                                experiences. We focus on high-quality food preparation, impeccable service, and inviting
+                                atmospheres across all our locations.</p>
+
+                            <div class="mb-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-3">Key Focus Areas:</h3>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Premium Restaurant Operations</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Authentic International Cuisine</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Professional Catering Services</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Event Hosting & Management</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                        <span>Culinary Excellence & Innovation</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-gray-600 mb-6">Our hospitality companies create exceptional dining
+                                experiences with authentic cuisine, warm atmospheres, and outstanding service that keeps
+                                customers coming back.</p>
+
+                            <a href="subsidiaries.html#hospitality"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                                Our Hospitality Companies</a>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2" data-aos="fade-left">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3"
+                            alt="Hospitality Services"
+                            class="rounded-2xl shadow-2xl w-full transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Cross-Sector Synergies -->
+        <section class="py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl font-bold mb-8">Cross-Sector Synergies</h2>
+                    <p class="text-xl max-w-3xl mx-auto mb-16 leading-relaxed">At BOD Holdings, we recognize the value
+                        of collaboration across our diverse sectors. By facilitating knowledge sharing and strategic
+                        partnerships between our subsidiaries, we create innovative solutions that transcend individual
+                        industries.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                            <div class="text-4xl mb-4 text-white">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Strategic Partnerships</h3>
+                            <p>We facilitate collaboration between our subsidiaries to create innovative solutions that
+                                leverage diverse expertise.</p>
+                        </div>
+
+                        <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                            <div class="text-4xl mb-4 text-white">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Innovation Hub</h3>
+                            <p>Our cross-sector innovation initiatives bring together experts from different fields to
+                                solve
+                                complex challenges.</p>
+                        </div>
+
+                        <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                            <div class="text-4xl mb-4 text-white">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Knowledge Exchange</h3>
+                            <p>Regular knowledge-sharing sessions enable best practices to flow freely across our
+                                organization.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced CTA Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 text-center">
+                <div data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-8">Interested in Working with BOD Holdings?</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">Whether you're looking to partner with us,
+                        invest in our ventures, or join our team, we'd love to hear from you.</p>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="contact.html"
+                            class="bg-blue-800 text-white hover:bg-blue-700 px-10 py-4 rounded-lg font-medium transition duration-300 transform hover:scale-105">Contact
+                            Us</a>
+                        <a href="subsidiaries.html"
+                            class="bg-gray-100 text-blue-800 hover:bg-gray-200 px-10 py-4 rounded-lg font-medium transition duration-300 transform hover:scale-105">Explore
+                            Our Subsidiaries</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Add AOS Script -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+        </script>
+        <script src="js/script.js"></script>
+
+        <!-- Add these styles to your existing CSS -->
+        <style>
+            @keyframes blob {
+                0% {
+                    transform: translate(0px, 0px) scale(1);
+                }
+
+                33% {
+                    transform: translate(30px, -50px) scale(1.1);
+                }
+
+                66% {
+                    transform: translate(-20px, 20px) scale(0.9);
+                }
+
+                100% {
+                    transform: translate(0px, 0px) scale(1);
+                }
+            }
+
+            .animate-blob {
+                animation: blob 7s infinite;
+            }
+
+            .animation-delay-2000 {
+                animation-delay: 2s;
+            }
+
+            .animation-delay-4000 {
+                animation-delay: 4s;
+            }
+
+            .floating-icon {
+                position: absolute;
+                animation: float 6s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+        </style>
+    </body>
+
+</html>

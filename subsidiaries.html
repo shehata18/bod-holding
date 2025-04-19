@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Subsidiaries - BOD Holdings</title>
+        <meta name="description"
+            content="Explore BOD Holdings' diverse portfolio of subsidiary companies across multiple sectors.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header (Same as index.html) -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="images/BOD%20Logo.jpg" alt="BOD Holdings Logo" class="h-10 mr-2">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="subsidiaries.html" class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Page Banner -->
+        <section class="relative h-[95vh] min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
+            <!-- Background Images with Parallax -->
+            <div class="absolute inset-0">
+                <!-- Main Background Image -->
+                <div class="absolute inset-0 transform scale-105 animate-slow-zoom">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Corporate Buildings"
+                        class="absolute inset-0 w-full h-full object-cover object-center opacity-60">
+                </div>
+                <!-- Overlay Image -->
+                <div class="absolute inset-0 mix-blend-overlay opacity-30">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                        alt="Business Grid" class="absolute inset-0 w-full h-full object-cover object-center">
+                </div>
+                <!-- Gradient Overlays -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-blue-900/80 to-black/90"></div>
+                <div
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]">
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="overflow-hidden mb-4">
+                        <h1 class="text-7xl md:text-8xl font-bold text-white mb-8 animate-fade-in-up">
+                            Our <span class="text-blue-400">Subsidiaries</span>
+                        </h1>
+                    </div>
+                    <div class="overflow-hidden mb-12">
+                        <p
+                            class="text-2xl md:text-3xl text-gray-200 max-w-3xl mx-auto font-light leading-relaxed animate-fade-in-up animation-delay-300">
+                            Explore BOD Holdings' diverse portfolio of companies across multiple sectors.
+                        </p>
+                    </div>
+                    <div class="animate-fade-in-up animation-delay-600">
+                        <a href="#sectors"
+                            class="group relative inline-flex items-center justify-center px-12 py-5 text-xl font-medium text-white bg-blue-600 overflow-hidden rounded-full transition-all duration-300 ease-out hover:scale-105 shadow-lg hover:shadow-xl">
+                            <div
+                                class="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 transform transition-transform duration-500 ease-out group-hover:scale-110">
+                            </div>
+                            <div class="absolute inset-0 w-full h-full animate-shine"></div>
+                            <span class="relative flex items-center">
+                                Explore Sectors
+                                <svg class="w-7 h-7 ml-3 transform transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <!-- Animated Circles -->
+                <div class="absolute -top-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-blob">
+                </div>
+                <div
+                    class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-300/10 rounded-full blur-3xl animate-blob animation-delay-2000">
+                </div>
+                <!-- Grid Pattern -->
+                <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
+            </div>
+
+            <!-- Bottom Fade -->
+            <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent"></div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16">
+                    <div class="relative inline-block group mb-8">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Portfolio of Companies</h2>
+                        <div class="absolute left-0 bottom-0 w-full">
+                            <div class="h-1 bg-blue-600 transform origin-left transition-all duration-300 ease-out 
+                                        group-hover:scale-x-110 group-hover:bg-blue-500"></div>
+                            <div class="h-px bg-blue-400/50 mt-0.5 transform origin-left transition-all duration-300 ease-out 
+                                        group-hover:scale-x-150 group-hover:bg-blue-400/30"></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-lg">BOD Holdings manages a diverse array of subsidiaries across
+                        multiple
+                        sectors. Our strategic investments and operational expertise have helped these companies grow
+                        and thrive in their respective markets.</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button
+                        class="filter-btn active px-6 py-2.5 bg-blue-800 text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="all">All Sectors</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="technology">Technology</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="finance">Finance</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="manufacturing">Manufacturing</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="healthcare">Healthcare</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="services">Services</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="automotive">Automotive</button>
+                    <button
+                        class="filter-btn px-6 py-2.5 bg-gray-100 text-gray-800 hover:bg-blue-800 hover:text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                        data-filter="hospitality">Hospitality</button>
+                </div>
+
+                <!-- Subsidiaries Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- LO Uniforms -->
+                    <div id="lo-uniforms"
+                        class="subsidiary-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                        data-category="manufacturing">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/LO%20Company.jpg" alt="LO Uniforms" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">LO Uniforms</h3>
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Manufacturing</span>
+                            </div>
+                            <p class="text-gray-600 mb-6">A leading uniform design and manufacturing company
+                                specializing in high-quality apparel for various industries. LO Uniforms combines style,
+                                comfort, and functionality to provide premium uniform solutions for businesses.</p>
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-800 mb-2">Key Services:</h4>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                    <li>Custom Uniform Design</li>
+                                    <li>Bulk Manufacturing</li>
+                                    <li>Corporate Identity Apparel</li>
+                                    <li>Industry-Specific Workwear</li>
+                                </ul>
+                            </div>
+                            <a href="subsidiaries/lo-uniforms.html"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition duration-300">Learn
+                                More</a>
+                        </div>
+                    </div>
+
+                    <!-- ASAP Maintenance -->
+                    <div id="asap-maintenance"
+                        class="subsidiary-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                        data-category="services">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/ASAP%20Comapny.jpg" alt="ASAP Maintenance & Operations"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">ASAP Maintenance & Operations</h3>
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Services</span>
+                            </div>
+                            <p class="text-gray-600 mb-6">مؤسسة اسرع وقت ممكن للتشعيل والصيانة (ASAP Maintenance &
+                                Operations) is a leading provider of comprehensive maintenance and operational services
+                                for commercial, residential, and industrial facilities across the region.</p>
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-800 mb-2">Key Services:</h4>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                    <li>Preventive Maintenance Programs</li>
+                                    <li>Emergency Repair Services</li>
+                                    <li>Facility Operations Management</li>
+                                    <li>MEP Systems Maintenance</li>
+                                    <li>Maintenance Contract Services</li>
+                                </ul>
+                            </div>
+                            <a href="subsidiaries/asap-maintenance.html"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition duration-300">Learn
+                                More</a>
+                        </div>
+                    </div>
+
+                    <!-- Graston Medical Clinics -->
+                    <div id="graston-clinics"
+                        class="subsidiary-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                        data-category="healthcare">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/GC%20Company.jpg" alt="Graston Medical Clinics"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Graston Medical Clinics</h3>
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Healthcare</span>
+                            </div>
+                            <p class="text-gray-600 mb-6">عيادات جراسستون للعلاج الطبيعي (Graston Medical Clinics) is a
+                                network of specialized physical therapy and rehabilitation centers dedicated to
+                                providing innovative, evidence-based treatment for patients recovering from injuries,
+                                surgeries, or managing chronic conditions.</p>
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-800 mb-2">Key Services:</h4>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                    <li>Physical Therapy & Rehabilitation</li>
+                                    <li>Sports Medicine & Injury Recovery</li>
+                                    <li>Graston Technique Therapy</li>
+                                    <li>Pain Management Programs</li>
+                                    <li>Post-Surgical Rehabilitation</li>
+                                </ul>
+                            </div>
+                            <a href="subsidiaries/graston-clinics.html"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition duration-300">Learn
+                                More</a>
+                        </div>
+                    </div>
+
+                    <!-- PowerMark Auto -->
+                    <div id="powermark-auto"
+                        class="subsidiary-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                        data-category="automotive">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/Power%20Mark%20company%20for%20cars.jpg" alt="PowerMark Auto"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">PowerMark Auto</h3>
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Automotive</span>
+                            </div>
+                            <p class="text-gray-600 mb-6">PowerMark Auto is a premier automotive company offering sales,
+                                service, and parts with a focus on luxury and performance vehicles. Our team of
+                                certified professionals ensures exceptional service for all your automotive needs.</p>
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-800 mb-2">Key Services:</h4>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                    <li>New & Pre-owned Vehicle Sales</li>
+                                    <li>Premium Auto Maintenance</li>
+                                    <li>Performance Upgrades</li>
+                                    <li>Genuine Parts & Accessories</li>
+                                    <li>Vehicle Customization</li>
+                                </ul>
+                            </div>
+                            <a href="subsidiaries/powermark-auto.html"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition duration-300">Learn
+                                More</a>
+                        </div>
+                    </div>
+
+                    <!-- Ramadan Restaurants -->
+                    <div id="ramadan-restaurants"
+                        class="subsidiary-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+                        data-category="hospitality">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/placeholders/restaurant-interior.jpg" alt="Ramadan Restaurants"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h3 class="text-xl font-bold text-gray-800">Ramadan Restaurants</h3>
+                                <span
+                                    class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Hospitality</span>
+                            </div>
+                            <p class="text-gray-600 mb-6">سلسلة مطاعم رمضان السعيد (Ramadan Restaurants) is a premier
+                                restaurant chain specializing in authentic Pakistani, Turkish, and traditional cuisine.
+                                With multiple locations across the region, we provide a warm, inviting dining
+                                experience.</p>
+                            <div class="mb-6">
+                                <h4 class="font-medium text-gray-800 mb-2">Key Offerings:</h4>
+                                <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                    <li>Pakistani Cuisine</li>
+                                    <li>Turkish Delicacies</li>
+                                    <li>Bukhari Rice Specialties</li>
+                                    <li>Traditional Mandi</li>
+                                    <li>Catering & Event Services</li>
+                                </ul>
+                            </div>
+                            <a href="subsidiaries/ramadan-restaurants.html"
+                                class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-2 rounded-md font-medium transition duration-300">Learn
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acquisition Strategy -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Business Acquisition" class="rounded-lg shadow-2xl w-full h-[400px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/20 to-transparent rounded-lg">
+                            </div>
+                            <!-- Decorative Elements -->
+                            <div
+                                class="absolute -top-6 -left-6 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
+                            </div>
+                            <div
+                                class="absolute -bottom-8 -right-8 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000">
+                            </div>
+                        </div>
+                        <div class="lg:pl-8">
+                            <div class="relative inline-block group mb-8">
+                                <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Acquisition Strategy</h2>
+                                <div class="absolute left-0 bottom-0 w-full">
+                                    <div class="h-1 bg-blue-600 transform origin-left transition-all duration-300 ease-out 
+                                                group-hover:scale-x-110 group-hover:bg-blue-500"></div>
+                                    <div class="h-px bg-blue-400/50 mt-0.5 transform origin-left transition-all duration-300 ease-out 
+                                                group-hover:scale-x-150 group-hover:bg-blue-400/30"></div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                                At BOD Holdings, we carefully evaluate potential acquisitions based on their strategic
+                                fit
+                                with our portfolio, growth potential, market position, and alignment with our values.
+                            </p>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                Our acquisition process involves thorough due diligence, strategic planning, and a
+                                commitment
+                                to preserving the unique strengths of each company while identifying opportunities for
+                                synergy and growth.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Strategic Market Analysis</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Due Diligence Process</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-gray-700">Growth & Integration Planning</span>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <a href="contact.html"
+                                    class="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg">
+                                    Discuss Partnership Opportunities
+                                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @keyframes shine {
+                    0% {
+                        transform: translateX(-100%) rotate(45deg);
+                    }
+
+                    100% {
+                        transform: translateX(100%) rotate(45deg);
+                    }
+                }
+
+                @keyframes slow-zoom {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    100% {
+                        transform: scale(1.1);
+                    }
+                }
+
+                @keyframes fade-in-up {
+                    0% {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .animate-shine {
+                    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+                    animation: shine 6s infinite;
+                }
+
+                .animate-slow-zoom {
+                    animation: slow-zoom 20s infinite alternate ease-in-out;
+                }
+
+                .animate-fade-in-up {
+                    opacity: 0;
+                    animation: fade-in-up 1s ease-out forwards;
+                }
+
+                .animation-delay-300 {
+                    animation-delay: 300ms;
+                }
+
+                .animation-delay-600 {
+                    animation-delay: 600ms;
+                }
+
+                .bg-grid-white {
+                    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+                }
+
+                @keyframes blob {
+                    0% {
+                        transform: translate(0px, 0px) scale(1);
+                    }
+
+                    33% {
+                        transform: translate(30px, -50px) scale(1.2);
+                    }
+
+                    66% {
+                        transform: translate(-20px, 20px) scale(0.8);
+                    }
+
+                    100% {
+                        transform: translate(0px, 0px) scale(1);
+                    }
+                }
+
+                .animate-blob {
+                    animation: blob 15s infinite ease-in-out;
+                }
+
+                .animation-delay-2000 {
+                    animation-delay: 2s;
+                }
+
+                .blur-3xl {
+                    --tw-blur: blur(100px);
+                    filter: var(--tw-blur);
+                }
+            </style>
+        </section>
+
+        <!-- Footer (Same as index.html) -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Filter Functionality for Subsidiaries
+            document.addEventListener('DOMContentLoaded', function () {
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                const subsidiaryCards = document.querySelectorAll('.subsidiary-card');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        // Remove active class from all buttons
+                        filterBtns.forEach(btn => {
+                            btn.classList.remove('active', 'bg-blue-800', 'text-white');
+                            btn.classList.add('bg-gray-200', 'text-gray-800');
+                        });
+
+                        // Add active class to clicked button
+                        this.classList.add('active', 'bg-blue-800', 'text-white');
+                        this.classList.remove('bg-gray-200', 'text-gray-800');
+
+                        const filter = this.getAttribute('data-filter');
+
+                        // Show/hide subsidiaries based on filter
+                        subsidiaryCards.forEach(card => {
+                            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <script src="js/script.js"></script>
+    </body>
+
+</html>

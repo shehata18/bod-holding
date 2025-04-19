@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Careers - BOD Holdings</title>
+        <meta name="description"
+            content="Join the BOD Holdings team. Explore career opportunities across our diverse portfolio of companies.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Add AOS animation library -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Replace Font Awesome with a more modern version -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Add custom styles for animations -->
+        <style>
+            /* Modern smooth transitions */
+            a,
+            button {
+                transition: all 0.3s ease;
+            }
+
+            /* Gradient text for headings */
+            .gradient-text {
+                background: linear-gradient(90deg, #1e40af, #3b82f6);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            /* Modern card hover effects */
+            .hover-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .hover-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Animated button */
+            .btn-animated {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+            }
+
+            .btn-animated:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.2);
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s ease;
+                z-index: -1;
+            }
+
+            .btn-animated:hover:after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            /* Timeline animation */
+            .timeline-dot {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .timeline-item:hover .timeline-dot {
+                transform: scale(1.2);
+                box-shadow: 0 0 15px rgba(30, 64, 175, 0.5);
+            }
+
+            /* Floating animation */
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+
+            /* Modern glassmorphism effect */
+            .glass-card {
+                background: rgba(255, 255, 255, 0.7);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        </style>
+    </head>
+
+    <body class="font-sans bg-gray-50">
+        <!-- Header -->
+        <header class="bg-white shadow-lg sticky top-0 z-50 glass-card">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-text">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        About
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="subsidiaries.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        Subsidiaries
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="sectors.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        Sectors
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="news.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="careers.html" class="text-blue-800 hover:text-blue-600 font-medium relative group">
+                        Careers
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-800 hover:text-blue-600 font-medium relative group">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600 flex items-center">
+                        <span>EN</span>
+                        <span class="mx-1">|</span>
+                        <span>عربي</span>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-gray-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="careers.html" class="block py-2 text-blue-800 hover:text-blue-600">Careers</a>
+                <a href="contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="relative bg-blue-900 text-white py-24">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('images/careers-banner.jpg')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <!-- Animated particles overlay -->
+            <div id="particles-js" class="absolute inset-0 z-0"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Join Our <span class="text-blue-300">Team</span>
+                    </h1>
+                    <p class="text-xl max-w-3xl mb-8">Discover rewarding career opportunities across BOD Holdings'
+                        diverse
+                        portfolio of companies.</p>
+                    <a href="#openings"
+                        class="bg-white text-blue-800 hover:bg-blue-100 px-8 py-3 rounded-full font-medium transition duration-300 btn-animated inline-flex items-center">
+                        View Openings
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6 gradient-text">Why Join BOD Holdings?</h2>
+                    <p class="text-gray-600">At BOD Holdings, we believe our success is driven by our people. We're
+                        committed to creating an environment where talented individuals can thrive, grow, and make a
+                        meaningful impact.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-blue-800 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-chart-line p-4 bg-blue-100 rounded-full"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Growth Opportunities</h3>
+                        <p class="text-gray-600">Expand your skills and advance your career through our professional
+                            development programs and cross-functional experiences.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-blue-800 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-handshake p-4 bg-blue-100 rounded-full"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Collaborative Culture</h3>
+                        <p class="text-gray-600">Work in a supportive environment that values teamwork, innovation, and
+                            mutual respect across all levels.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-xl shadow-xl hover-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-blue-800 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-globe p-4 bg-blue-100 rounded-full"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Global Impact</h3>
+                        <p class="text-gray-600">Be part of a company making meaningful contributions across diverse
+                            industries and markets worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Openings -->
+        <section id="openings" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-16 gradient-text" data-aos="fade-up">Current Openings</h2>
+
+                <!-- Search and Filter Bar -->
+                <div class="max-w-4xl mx-auto mb-12 flex flex-wrap gap-4 justify-center items-center"
+                    data-aos="fade-up">
+                    <div class="relative flex-grow max-w-md">
+                        <input type="text" placeholder="Search positions..."
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300">
+                        <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <div class="flex gap-3 flex-wrap">
+                        <select
+                            class="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300">
+                            <option value="">All Departments</option>
+                            <option value="finance">Finance</option>
+                            <option value="technology">Technology</option>
+                            <option value="real-estate">Real Estate</option>
+                        </select>
+                        <select
+                            class="px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300">
+                            <option value="">All Locations</option>
+                            <option value="remote">Remote</option>
+                            <option value="onsite">On-site</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                    <!-- Job Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="p-8">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                                <div class="flex-grow">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span
+                                            class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Finance</span>
+                                        <span
+                                            class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span>
+                                        <span
+                                            class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Remote</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Financial Analyst</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Finance Department</p>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="text-sm">New York, USA</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6 p-4 bg-blue-50 rounded-xl">
+                                <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                    <i class="fas fa-briefcase text-blue-600"></i>
+                                    Key Requirements
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Bachelor's degree in Finance or related field
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        3+ years of experience in financial analysis
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Strong analytical and problem-solving skills
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-clock"></i>
+                                        <span class="text-sm">Posted 2 days ago</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span class="text-sm">4 positions</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-full font-medium transition duration-300 btn-animated">
+                                    Apply Now
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="p-8">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                                <div class="flex-grow">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span
+                                            class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Technology</span>
+                                        <span
+                                            class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span>
+                                        <span
+                                            class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">Hybrid</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Senior Software Developer</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Technology Department</p>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="text-sm">San Francisco, USA</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6 p-4 bg-blue-50 rounded-xl">
+                                <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                    <i class="fas fa-briefcase text-blue-600"></i>
+                                    Key Requirements
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        5+ years of software development experience
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Expertise in multiple programming languages
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Experience with Agile methodologies
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-clock"></i>
+                                        <span class="text-sm">Posted 5 days ago</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span class="text-sm">2 positions</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-full font-medium transition duration-300 btn-animated">
+                                    Apply Now
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="p-8">
+                            <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                                <div class="flex-grow">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <span
+                                            class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Real
+                                            Estate</span>
+                                        <span
+                                            class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span>
+                                        <span
+                                            class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">On-site</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Project Manager</h3>
+                                    <p class="text-gray-600 text-sm mb-4">Real Estate Division</p>
+                                </div>
+                                <div class="flex items-center gap-2 text-gray-600">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="text-sm">Dubai, UAE</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6 p-4 bg-blue-50 rounded-xl">
+                                <h4 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                                    <i class="fas fa-briefcase text-blue-600"></i>
+                                    Key Requirements
+                                </h4>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        7+ years in real estate project management
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        PMP certification preferred
+                                    </li>
+                                    <li class="flex items-center gap-2 text-gray-600">
+                                        <i class="fas fa-check-circle text-blue-600"></i>
+                                        Strong leadership abilities
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-clock"></i>
+                                        <span class="text-sm">Posted 1 week ago</span>
+                                    </div>
+                                    <div class="flex items-center gap-1 text-gray-600">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span class="text-sm">1 position</span>
+                                    </div>
+                                </div>
+                                <a href="#"
+                                    class="inline-flex items-center gap-2 bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-full font-medium transition duration-300 btn-animated">
+                                    Apply Now
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process -->
+        <section class="py-20 bg-white relative overflow-hidden">
+            <!-- Background decoration -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-70"></div>
+            <div
+                class="absolute right-0 top-0 w-1/3 h-1/3 bg-blue-50 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute left-0 bottom-0 w-1/4 h-1/4 bg-blue-50 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2">
+            </div>
+
+            <div class="container mx-auto px-4 relative">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <span class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">Join Our
+                            Team</span>
+                        <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Our Application Process</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">We've designed a straightforward process to help you
+                            join our team. Here's what you can expect at each step.</p>
+                    </div>
+
+                    <div class="relative">
+                        <!-- Timeline Line -->
+                        <div
+                            class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-600 to-blue-900 rounded-full">
+                        </div>
+
+                        <!-- Step 1 -->
+                        <div class="relative mb-16 timeline-item group" data-aos="fade-right">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 pr-8 md:text-right mb-8 md:mb-0">
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+                                        <span
+                                            class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">STEP
+                                            01</span>
+                                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Application Submission</h3>
+                                        <p class="text-gray-600 mb-4">Submit your resume and cover letter through our
+                                            online portal. Make sure to highlight relevant experience and skills.</p>
+                                        <div class="flex md:justify-end gap-4 text-sm text-gray-500">
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-clock"></i>
+                                                1-2 business days
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-check-circle text-green-500"></i>
+                                                Quick Process
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                    <div
+                                        class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white group-hover:scale-110 transition-transform duration-300">
+                                        1
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 pl-0 md:pl-8">
+                                    <div
+                                        class="flex items-center gap-4 text-blue-800 group-hover:text-blue-600 transition-colors duration-300">
+                                        <i class="fas fa-file-upload text-3xl"></i>
+                                        <div class="text-sm font-medium">Upload your documents</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="relative mb-16 timeline-item group" data-aos="fade-left">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 pr-0 md:pr-8 order-2 md:order-1">
+                                    <div
+                                        class="flex items-center gap-4 text-blue-800 group-hover:text-blue-600 transition-colors duration-300">
+                                        <i class="fas fa-phone-alt text-3xl"></i>
+                                        <div class="text-sm font-medium">Initial phone screening</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                    <div
+                                        class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white group-hover:scale-110 transition-transform duration-300">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 pl-8 order-1 md:order-2 mb-8 md:mb-0">
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+                                        <span
+                                            class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">STEP
+                                            02</span>
+                                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Initial Screening</h3>
+                                        <p class="text-gray-600 mb-4">Our HR team reviews applications and conducts
+                                            preliminary phone interviews to understand your background and aspirations.
+                                        </p>
+                                        <div class="flex gap-4 text-sm text-gray-500">
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-clock"></i>
+                                                3-5 business days
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-phone-alt text-blue-500"></i>
+                                                30min call
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative mb-16 timeline-item group" data-aos="fade-right">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 pr-8 md:text-right mb-8 md:mb-0">
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+                                        <span
+                                            class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">STEP
+                                            03</span>
+                                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Interview Process</h3>
+                                        <p class="text-gray-600 mb-4">Multiple rounds of interviews with the hiring team
+                                            and potential colleagues to assess technical skills and cultural fit.</p>
+                                        <div class="flex md:justify-end gap-4 text-sm text-gray-500">
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-clock"></i>
+                                                1-2 weeks
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-users text-blue-500"></i>
+                                                Team Interview
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                    <div
+                                        class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white group-hover:scale-110 transition-transform duration-300">
+                                        3
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 pl-0 md:pl-8">
+                                    <div
+                                        class="flex items-center gap-4 text-blue-800 group-hover:text-blue-600 transition-colors duration-300">
+                                        <i class="fas fa-users text-3xl"></i>
+                                        <div class="text-sm font-medium">Meet the team</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative timeline-item group" data-aos="fade-left">
+                            <div class="md:flex items-center">
+                                <div class="md:w-1/2 pr-0 md:pr-8 order-2 md:order-1">
+                                    <div
+                                        class="flex items-center gap-4 text-blue-800 group-hover:text-blue-600 transition-colors duration-300">
+                                        <i class="fas fa-handshake text-3xl"></i>
+                                        <div class="text-sm font-medium">Welcome aboard!</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
+                                    <div
+                                        class="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-xl shadow-lg border-4 border-white group-hover:scale-110 transition-transform duration-300">
+                                        4
+                                    </div>
+                                </div>
+                                <div class="md:w-1/2 pl-8 order-1 md:order-2">
+                                    <div
+                                        class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+                                        <span
+                                            class="text-blue-600 font-semibold text-sm tracking-wider uppercase mb-2 block">STEP
+                                            04</span>
+                                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Decision & Offer</h3>
+                                        <p class="text-gray-600 mb-4">Final selection is made and offer extended to the
+                                            successful candidate, followed by onboarding process.</p>
+                                        <div class="flex gap-4 text-sm text-gray-500">
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-clock"></i>
+                                                Within 1 week
+                                            </span>
+                                            <span class="flex items-center gap-1">
+                                                <i class="fas fa-handshake text-green-500"></i>
+                                                Final Offer
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tips Box -->
+                    <div class="mt-16 bg-blue-50 rounded-2xl p-8" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <i class="fas fa-lightbulb text-blue-600"></i>
+                            Tips for Success
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-3">
+                                <div class="text-blue-600 mt-1">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Research Us</h4>
+                                    <p class="text-gray-600 text-sm">Understand our company values and recent projects
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-blue-600 mt-1">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Be Prepared</h4>
+                                    <p class="text-gray-600 text-sm">Review common interview questions and prepare
+                                        examples</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-blue-600 mt-1">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Ask Questions</h4>
+                                    <p class="text-gray-600 text-sm">Show your interest by asking thoughtful questions
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="text-blue-600 mt-1">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Follow Up</h4>
+                                    <p class="text-gray-600 text-sm">Send a thank-you note after your interviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+            <div class="absolute inset-0 opacity-20 bg-pattern"></div>
+            <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-up">
+                <div class="glass-card max-w-4xl mx-auto py-12 px-8 rounded-2xl">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Don't See the Right Fit?</h2>
+                    <p class="text-xl text-blue-100 max-w-3xl mx-auto mb-8">We're always looking for talented
+                        individuals to join our
+                        team. Submit your resume for future opportunities.</p>
+                    <a href="#"
+                        class="bg-white text-blue-800 hover:bg-blue-100 px-8 py-4 rounded-full font-medium transition duration-300 btn-animated inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        Submit Your Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Same as index.html) -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <!-- AOS Animation Library -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <!-- Particles.js for background animation -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+        <!-- Custom animations -->
+        <script>
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                once: false,
+                mirror: true
+            });
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Initialize particles.js
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ffffff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add background pattern effect
+            document.querySelectorAll('.bg-pattern').forEach(element => {
+                element.style.backgroundImage = "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0 0h20v20H0z\" fill=\"%23ffffff\" fill-opacity=\"0.05\"/%3E%3C/svg%3E')";
+            });
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BOD United for Communications & IT - BOD Holdings</title>
+        <meta name="description"
+            content="BOD United for Communications & Information Technology, the parent company of BOD Holdings providing technology services.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../subsidiaries.html"
+                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="relative bg-blue-900 text-white py-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('../images/BOD%20Logo.jpg')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">BOD United for Communications & IT</h1>
+                <p class="text-xl max-w-3xl">The parent company of BOD Holdings, delivering innovative technology
+                    solutions and digital transformation services.</p>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="../images/BOD%20Logo.jpg" alt="BOD United Logo" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About BOD United</h2>
+                        <p class="text-gray-600 mb-4">
+                            مؤسسة بود المتحدة للاتصالات وتقنية المعلومات is the flagship company of BOD Holdings,
+                            specializing in cutting-edge technology solutions and digital services. As the parent
+                            company, we drive innovation across all our subsidiaries while maintaining our core focus on
+                            technological excellence.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            With expertise spanning application development, digital marketing, artificial intelligence,
+                            augmented reality, and virtual reality, BOD United is positioned at the forefront of digital
+                            transformation in the region.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Technology Applications Development</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Digital Marketing & Strategy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Artificial Intelligence Solutions</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Augmented Reality Experiences</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Virtual Reality Applications</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Technology Solutions</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Application Development</h3>
+                            <p class="text-gray-600 mb-4">
+                                Custom mobile and web applications designed to meet specific business needs and enhance
+                                user experience. Our development team creates scalable, secure, and intuitive
+                                applications.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Key Features:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• Native & Cross-platform Solutions</li>
+                                    <li>• User-centered Design</li>
+                                    <li>• Secure Development Practices</li>
+                                    <li>• Ongoing Support & Maintenance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Marketing</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive digital marketing strategies that drive brand awareness, customer
+                                engagement, and business growth through targeted campaigns and data-driven insights.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Our Approach:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• Search Engine Optimization (SEO)</li>
+                                    <li>• Social Media Marketing</li>
+                                    <li>• Email Marketing Campaigns</li>
+                                    <li>• Performance Analytics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Artificial Intelligence</h3>
+                            <p class="text-gray-600 mb-4">
+                                Advanced AI solutions that automate processes, extract insights from data, and enhance
+                                decision-making through machine learning algorithms and data analysis.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Applications:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• Predictive Analytics</li>
+                                    <li>• Natural Language Processing</li>
+                                    <li>• Computer Vision</li>
+                                    <li>• Automated Decision Systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-vr-cardboard text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Virtual Reality</h3>
+                            <p class="text-gray-600 mb-4">
+                                Immersive VR experiences for training, entertainment, marketing, and visualization. Our
+                                VR solutions transport users to interactive virtual environments.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Industries Served:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• Real Estate & Architecture</li>
+                                    <li>• Education & Training</li>
+                                    <li>• Healthcare Simulations</li>
+                                    <li>• Entertainment & Events</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-glasses text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Augmented Reality</h3>
+                            <p class="text-gray-600 mb-4">
+                                AR applications that enhance real-world environments with digital content, creating
+                                interactive and engaging experiences for users across various platforms.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Solutions:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• AR Product Visualization</li>
+                                    <li>• Interactive Marketing Materials</li>
+                                    <li>• Educational AR Applications</li>
+                                    <li>• Industrial Maintenance Guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:transform hover:scale-105">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-digital-tachograph text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Transformation</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive digital transformation strategies that help businesses modernize
+                                operations, enhance customer experiences, and stay competitive in the digital age.
+                            </p>
+                            <div class="border-t border-gray-200 pt-4 mt-4">
+                                <span class="text-blue-800 font-medium">Our Process:</span>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li>• Digital Assessment & Strategy</li>
+                                    <li>• Process Automation</li>
+                                    <li>• Cloud Migration</li>
+                                    <li>• Technology Integration</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Success Stories</h2>
+                <p class="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+                    Explore how our technology solutions have helped businesses transform their operations and achieve
+                    their goals.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Case Study 1 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="../images/placeholders/tech-case-study-1.jpg" alt="E-commerce Platform"
+                            class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">E-commerce Platform Transformation</h3>
+                            <p class="text-gray-600 mb-4">
+                                Redesigned and rebuilt a leading retailer's e-commerce platform, resulting in a 45%
+                                increase in conversion rates and 60% improvement in page load time.
+                            </p>
+                            <a href="#" class="text-blue-800 font-medium hover:underline">Read Case Study →</a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                        <img src="../images/placeholders/tech-case-study-2.jpg" alt="AR Marketing Campaign"
+                            class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">AR Marketing Campaign</h3>
+                            <p class="text-gray-600 mb-4">
+                                Developed an augmented reality campaign for a consumer goods brand that achieved 2.5
+                                million interactions and increased brand engagement by 78%.
+                            </p>
+                            <a href="#" class="text-blue-800 font-medium hover:underline">Read Case Study →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-8">
+                    Contact BOD United to discuss how our technology solutions can help your organization thrive in the
+                    digital age.
+                </p>
+                <a href="../contact.html"
+                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Get
+                    in Touch</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                            </li>
+                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+
+</html>

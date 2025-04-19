@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Power Mark Auto Service - BOD Holdings</title>
+        <meta name="description"
+            content="Power Mark Auto Service Center (مركز علامة القوة لصيانة السيارات) offers comprehensive maintenance and repair services for all vehicle types.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../subsidiaries.html"
+                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="relative bg-blue-900 text-white py-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+            <div
+                class="absolute inset-0 bg-[url('../images/Power%20Mark%20company%20for%20cars.jpg')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Power Mark Auto Service</h1>
+                <p class="text-xl max-w-3xl">مركز علامة القوة لصيانة السيارات - Expert vehicle maintenance and repair
+                    services with a commitment to quality and customer satisfaction.</p>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="../images/Power%20Mark%20company%20for%20cars.jpg" alt="Power Mark Auto Service Logo"
+                            class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About Power Mark</h2>
+                        <p class="text-gray-600 mb-4">
+                            مركز علامة القوة لصيانة السيارات (Power Mark) is a premier auto service center dedicated to
+                            providing comprehensive vehicle maintenance and repair services. Our state-of-the-art
+                            facilities and expert technicians ensure your vehicle receives the highest standard of care.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            With a focus on efficiency, reliability, and customer satisfaction, Power Mark has earned a
+                            reputation for excellence in the automotive service industry. We combine technical expertise
+                            with a commitment to transparency and value.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Approach</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Advanced Diagnostic Technology</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Factory-Trained Technicians</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Quality Parts & Materials</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Comprehensive Service Menu</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Transparent Pricing & Communication</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-oil-can text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Routine Maintenance</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive maintenance services including oil changes, filter replacements, fluid
+                                checks, and multi-point inspections to keep your vehicle running smoothly.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• Oil & Filter Changes</li>
+                                <li>• Fluid Top-ups & Replacements</li>
+                                <li>• Filter Replacements</li>
+                                <li>• Battery Testing & Replacement</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-wrench text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Mechanical Repairs</h3>
+                            <p class="text-gray-600 mb-4">
+                                Expert diagnosis and repair of mechanical components, ensuring optimal vehicle
+                                performance and reliability for various vehicle makes and models.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• Engine Diagnostics & Repair</li>
+                                <li>• Transmission Service</li>
+                                <li>• Cooling System Repairs</li>
+                                <li>• Exhaust System Service</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-car-battery text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Electrical Systems</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive electrical diagnostics and repairs, addressing everything from simple
+                                battery replacements to complex computer system troubleshooting.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• Computer Diagnostics</li>
+                                <li>• Electrical Troubleshooting</li>
+                                <li>• Battery & Charging Systems</li>
+                                <li>• Lighting & Accessory Repair</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-tachometer-alt text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Performance Upgrades</h3>
+                            <p class="text-gray-600 mb-4">
+                                Customized performance enhancements to improve your vehicle's power, efficiency, and
+                                driving experience while maintaining reliability.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• Engine Tuning</li>
+                                <li>• Exhaust System Upgrades</li>
+                                <li>• Suspension Improvements</li>
+                                <li>• Transmission Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-cogs text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Brake Systems</h3>
+                            <p class="text-gray-600 mb-4">
+                                Comprehensive brake inspections, repairs, and replacements to ensure optimal stopping
+                                power and safety for your vehicle under all conditions.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• Brake Pad Replacement</li>
+                                <li>• Rotor Resurfacing & Replacement</li>
+                                <li>• Brake Fluid Flush</li>
+                                <li>• ABS System Diagnostics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-wind text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Climate Control</h3>
+                            <p class="text-gray-600 mb-4">
+                                Air conditioning and heating system diagnosis, repair, and maintenance to ensure optimal
+                                climate control and passenger comfort year-round.
+                            </p>
+                            <ul class="mt-2 space-y-1 text-gray-600">
+                                <li>• A/C System Inspection & Repair</li>
+                                <li>• Refrigerant Recharge</li>
+                                <li>• Heating System Service</li>
+                                <li>• Cabin Air Filter Replacement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Power Mark</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Expert Technicians</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Our factory-trained and certified technicians have extensive experience working with all
+                            vehicle makes and models, ensuring accurate diagnostics and skilled repairs.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Quality Guarantee</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            We stand behind our work with comprehensive service warranties and use only quality OEM or
+                            approved aftermarket parts for all repairs and replacements.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Transparent Pricing</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            We provide clear, upfront estimates before beginning any work, ensuring no surprises and
+                            helping you make informed decisions about your vehicle's maintenance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fleet Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Fleet Maintenance Programs</h2>
+                        <p class="text-gray-600 mb-4">
+                            Power Mark offers specialized maintenance programs for business fleets of all sizes. Our
+                            comprehensive fleet services help minimize downtime, control costs, and extend vehicle life.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Customized Maintenance Schedules</h3>
+                                <p class="text-gray-600">Tailored service plans based on your fleet's specific needs,
+                                    usage patterns, and vehicle types.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Priority Service</h3>
+                                <p class="text-gray-600">Expedited service for fleet vehicles to minimize downtime and
+                                    keep your business moving.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Detailed Reporting</h3>
+                                <p class="text-gray-600">Comprehensive service records and reporting to track
+                                    maintenance costs and vehicle performance.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Flexible Billing Options</h3>
+                                <p class="text-gray-600">Consolidated invoicing and account management tailored to your
+                                    business requirements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <img src="../images/placeholders/fleet-service.jpg" alt="Fleet Maintenance Services"
+                            class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Ready to Experience Premium Auto Service?</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-8">
+                    Schedule an appointment at Power Mark Auto Service today and see why we're the trusted choice for
+                    vehicle maintenance and repairs.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="../contact.html"
+                        class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Book
+                        an Appointment</a>
+                    <a href="tel:+123456789"
+                        class="inline-block bg-transparent border border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-md font-medium transition duration-300">Call
+                        Us Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                            </li>
+                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Business Hours</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>Monday - Friday: 8:00 AM - 6:00 PM</li>
+                            <li>Saturday: 8:00 AM - 4:00 PM</li>
+                            <li>Sunday: Closed</li>
+                            <li class="pt-2 font-semibold">Emergency Services Available 24/7</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+
+</html>

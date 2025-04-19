@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BOD - Holdings Company</title>
+        <meta name="description"
+            content="BOD Holdings Company - A leading holding company with diverse subsidiaries across multiple sectors">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <style>
+            @keyframes zoomInOut {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.1);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-50px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes slideInRight {
+                from {
+                    opacity: 0;
+                    transform: translateX(50px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .animate-zoom {
+                animation: zoomInOut 20s infinite;
+            }
+
+            .animate-fade-up {
+                animation: fadeInUp 1s ease-out;
+            }
+
+            .animate-slide-left {
+                animation: slideInLeft 1s ease-out;
+            }
+
+            .animate-slide-right {
+                animation: slideInRight 1s ease-out;
+            }
+
+            .hero-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+                background-size: cover;
+                z-index: -1;
+            }
+
+            /* Scroll Animations */
+            .fade-in-up {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+
+            .fade-in-left {
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+
+            .fade-in-right {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+
+            .scale-up {
+                opacity: 0;
+                transform: scale(0.95);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+
+            .animate-visible {
+                opacity: 1;
+                transform: translate(0) scale(1);
+            }
+
+            .stagger-animation>* {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            }
+
+            .stagger-animation.animate-visible>* {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .stagger-animation.animate-visible>*:nth-child(1) {
+                transition-delay: 0.1s;
+            }
+
+            .stagger-animation.animate-visible>*:nth-child(2) {
+                transition-delay: 0.2s;
+            }
+
+            .stagger-animation.animate-visible>*:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            .stagger-animation.animate-visible>*:nth-child(4) {
+                transition-delay: 0.4s;
+            }
+
+            .stagger-animation.animate-visible>*:nth-child(5) {
+                transition-delay: 0.5s;
+            }
+        </style>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-transparent absolute top-0 left-0 right-0 z-50">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="index.html" class="flex items-center">
+                            <img src="images/BOD%20Logo.jpg" alt="BOD Holdings Logo" class="h-12 mr-2 rounded">
+                        </a>
+                    </div>
+
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="index.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">Home</a>
+                        <a href="about.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">About</a>
+                        <a href="subsidiaries.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">Subsidiaries</a>
+                        <a href="sectors.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">Sectors</a>
+                        <a href="news.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">News</a>
+                        <a href="careers.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">Careers</a>
+                        <a href="contact.html"
+                            class="text-white hover:text-blue-200 font-medium transition duration-300">Contact</a>
+                    </nav>
+
+                    <div class="flex items-center space-x-4">
+                        <button id="language-toggle" class="text-white hover:text-blue-200 transition duration-300">EN |
+                            عربي</button>
+                        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-blue-900 bg-opacity-95 px-4 py-2">
+                <a href="index.html" class="block py-2 text-white hover:text-blue-200">Home</a>
+                <a href="about.html" class="block py-2 text-white hover:text-blue-200">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-white hover:text-blue-200">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-white hover:text-blue-200">Sectors</a>
+                <a href="news.html" class="block py-2 text-white hover:text-blue-200">News</a>
+                <a href="careers.html" class="block py-2 text-white hover:text-blue-200">Careers</a>
+                <a href="contact.html" class="block py-2 text-white hover:text-blue-200">Contact</a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="hero-bg animate-zoom"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-3xl text-white">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-left">
+                        Building
+                        Success Through Diverse Investments</h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90 animate-slide-right">BOD Holdings - A leading
+                        investment company managing
+                        multiple successful subsidiaries across diverse sectors</p>
+                    <div class="flex flex-wrap gap-4 animate-fade-up">
+                        <a href="about.html"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-md font-medium transition duration-300 text-lg transform hover:scale-105">Learn
+                            More</a>
+                        <a href="contact.html"
+                            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-md font-medium transition duration-300 text-lg transform hover:scale-105">Contact
+                            Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- About Section Preview -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12 fade-in-left">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">About BOD Holdings</h2>
+                        <p class="text-gray-600 mb-6">BOD is a prestigious holding company that manages and oversees a
+                            diverse portfolio of subsidiaries across multiple sectors. With a strategic vision and
+                            commitment to excellence, we've established ourselves as leaders in the market.</p>
+                        <p class="text-gray-600 mb-6">Our mission is to create sustainable value for our stakeholders
+                            through strategic investments, operational excellence, and responsible business practices.
+                        </p>
+                        <a href="about.html"
+                            class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">More
+                            About Us</a>
+                    </div>
+                    <div class="md:w-1/2 fade-in-right">
+                        <div class="rounded-lg overflow-hidden shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                                alt="BOD corporate image" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsidiaries Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Subsidiaries</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">BOD Holdings manages a diverse portfolio of successful
+                        companies across multiple industries, each contributing to our collective growth and success.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 stagger-animation">
+                    <!-- Subsidiary 1 - LO Uniforms -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/LO%20Company.jpg" alt="LO Uniforms" class="max-h-48 w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">LO Uniforms</h3>
+                            <p class="text-gray-600 mb-4">Specializing in high-quality uniform design, manufacturing and
+                                supply for various industries including hospitality and healthcare.</p>
+                            <a href="subsidiaries/lo-uniforms.html"
+                                class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Subsidiary 2 - ASAP Maintenance -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/ASAP%20Comapny.jpg" alt="ASAP Maintenance"
+                                class="max-h-48 w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">ASAP Maintenance & Operations</h3>
+                            <p class="text-gray-600 mb-4">Providing swift and reliable maintenance and operation
+                                services for commercial, residential, and industrial facilities.</p>
+                            <a href="subsidiaries/asap-maintenance.html"
+                                class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Subsidiary 3 - Graston Medical Clinics -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                                alt="Graston Medical Clinics" class="max-h-48 w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Graston Medical Clinics</h3>
+                            <p class="text-gray-600 mb-4">Specialized physical therapy and rehabilitation centers
+                                offering innovative, evidence-based treatment for optimal recovery and wellness.</p>
+                            <a href="subsidiaries/graston-clinics.html"
+                                class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Subsidiary 4 - PowerMark Auto -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="images/Power%20Mark%20company%20for%20cars.jpg" alt="PowerMark Auto"
+                                class="max-h-48 w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">PowerMark Auto</h3>
+                            <p class="text-gray-600 mb-4">Premium automotive sales, service, and parts with a focus on
+                                luxury and performance vehicles.</p>
+                            <a href="subsidiaries/powermark-auto.html"
+                                class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Subsidiary 5 - Ramadan Restaurants -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                        <div class="h-48 bg-gray-200 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                                alt="Ramadan Restaurants" class="max-h-48 w-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ramadan Restaurants</h3>
+                            <p class="text-gray-600 mb-4">A premier restaurant chain specializing in authentic
+                                Pakistani, Turkish, and traditional cuisine with multiple locations.</p>
+                            <a href="subsidiaries/ramadan-restaurants.html"
+                                class="text-blue-600 hover:text-blue-800 font-medium">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10 fade-in-up">
+                    <a href="subsidiaries.html"
+                        class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">View
+                        All Subsidiaries</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12 fade-in-up">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Business Sectors</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">BOD Holdings operates across multiple key industries,
+                        leveraging expertise and innovation to create sustainable value.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
+                    <!-- Technology Sector -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                        <div class="flex justify-center items-center text-blue-800 text-4xl mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3059/3059997.png" alt="Technology Icon"
+                                class="w-16 h-16 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Technology</h3>
+                        <p class="text-gray-600 mb-4">Digital innovation and IT services including software development,
+                            cybersecurity, and cloud solutions.</p>
+                        <a href="sectors.html#technology"
+                            class="text-blue-800 hover:text-blue-700 font-medium inline-flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Finance Sector -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                        <div class="flex justify-center items-center text-blue-800 text-4xl mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2382/2382533.png" alt="Finance Icon"
+                                class="w-16 h-16 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Finance</h3>
+                        <p class="text-gray-600 mb-4">Investment management, financial consulting, and fintech solutions
+                            for individuals and businesses.</p>
+                        <a href="sectors.html#finance"
+                            class="text-blue-800 hover:text-blue-700 font-medium inline-flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Manufacturing Sector -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                        <div class="flex justify-center items-center text-blue-800 text-4xl mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1786/1786046.png" alt="Manufacturing Icon"
+                                class="w-16 h-16 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Manufacturing</h3>
+                        <p class="text-gray-600 mb-4">Production of high-quality goods across textiles, industrial
+                            equipment, and consumer products.</p>
+                        <a href="sectors.html#manufacturing"
+                            class="text-blue-800 hover:text-blue-700 font-medium inline-flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Automotive Sector -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                        <div class="flex justify-center items-center text-blue-800 text-4xl mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774278.png" alt="Automotive Icon"
+                                class="w-16 h-16 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Automotive</h3>
+                        <p class="text-gray-600 mb-4">Premium automotive sales, service, and customization with a focus
+                            on luxury and performance vehicles.</p>
+                        <a href="sectors.html#automotive"
+                            class="text-blue-800 hover:text-blue-700 font-medium inline-flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+
+                    <!-- Hospitality Sector -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+                        <div class="flex justify-center items-center text-blue-800 text-4xl mb-6">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4287/4287725.png" alt="Hospitality Icon"
+                                class="w-16 h-16 mb-4">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Hospitality</h3>
+                        <p class="text-gray-600 mb-4">Premium dining establishments offering authentic international
+                            cuisine with exceptional service and catering options.</p>
+                        <a href="sectors.html#hospitality"
+                            class="text-blue-800 hover:text-blue-700 font-medium inline-flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-center mt-10 fade-in-up">
+                    <a href="sectors.html"
+                        class="inline-block bg-blue-800 text-white hover:bg-blue-700 px-6 py-3 rounded-md font-medium transition duration-300">Explore
+                        All Sectors</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center mb-10 fade-in-up">
+                    <h2 class="text-3xl font-bold text-gray-800">Latest News</h2>
+                    <a href="news.html" class="text-blue-600 hover:text-blue-800 font-medium">View All News →</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
+                    <!-- News Item 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                            alt="BOD Holdings Acquisition News" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500 block mb-2">June 15, 2023</span>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">BOD Holdings Announces New Strategic
+                                Acquisition</h3>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aenean vel est ut neque...</p>
+                            <a href="news.html#news1" class="text-blue-600 hover:text-blue-800 font-medium">Read More
+                                →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Item 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                            alt="Financial Results News" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500 block mb-2">May 28, 2023</span>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Quarterly Financial Results Exceed
+                                Expectations</h3>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aenean vel est ut neque...</p>
+                            <a href="news.html#news2" class="text-blue-600 hover:text-blue-800 font-medium">Read More
+                                →</a>
+                        </div>
+                    </div>
+
+                    <!-- News Item 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                            alt="Sustainability Initiative News" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500 block mb-2">April 10, 2023</span>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">BOD Launches New Sustainability Initiative
+                            </h3>
+                            <p class="text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Aenean vel est ut neque...</p>
+                            <a href="news.html#news3" class="text-blue-600 hover:text-blue-800 font-medium">Read More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center scale-up">
+                <h2 class="text-3xl font-bold mb-6">Ready to Partner with BOD Holdings?</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-8">Join us in building a successful future. Whether you're
+                    looking to invest, partner, or explore career opportunities, we'd love to hear from you.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="contact.html"
+                        class="bg-white text-blue-800 hover:bg-blue-100 px-8 py-3 rounded-md font-medium transition duration-300">Contact
+                        Us</a>
+                    <a href="careers.html"
+                        class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-3 rounded-md font-medium transition duration-300">Join
+                        Our Team</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script>
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            });
+
+            // Scroll animations
+            document.addEventListener('DOMContentLoaded', function () {
+                const options = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.2
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate-visible');
+                            observer.unobserve(entry.target); // Stop observing once animated
+                        }
+                    });
+                }, options);
+
+                // Observe all elements with animation classes
+                const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-up, .stagger-animation');
+                animatedElements.forEach(element => observer.observe(element));
+            });
+        </script>
+    </body>
+
+</html>

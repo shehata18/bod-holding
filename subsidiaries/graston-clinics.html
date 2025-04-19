@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Graston Medical Clinics - BOD Holdings</title>
+        <meta name="description"
+            content="Graston Medical Clinics (عيادات جراسستون للعلاج الطبيعي) provides specialized physical therapy and rehabilitation services.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../subsidiaries.html"
+                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="relative bg-blue-900 text-white py-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+            <div class="absolute inset-0 bg-[url('../images/GC%20Company.jpg')] bg-cover bg-center mix-blend-overlay">
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Graston Medical Clinics</h1>
+                <p class="text-xl max-w-3xl">عيادات جراسستون للعلاج الطبيعي - Specialized physical therapy and
+                    rehabilitation services for optimal recovery and wellness.</p>
+            </div>
+        </section>
+
+        <!-- Company Overview -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <img src="../images/GC%20Company.jpg" alt="Graston Medical Clinics Logo"
+                            class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About Graston Medical Clinics</h2>
+                        <p class="text-gray-600 mb-4">
+                            عيادات جراسستون للعلاج الطبيعي (Graston Medical Clinics) is a network of specialized
+                            physical therapy and rehabilitation centers dedicated to providing innovative,
+                            evidence-based
+                            treatment for patients recovering from injuries, surgeries, or managing chronic conditions.
+                        </p>
+                        <p class="text-gray-600 mb-6">
+                            Our clinics feature state-of-the-art equipment and are staffed by highly trained physical
+                            therapists, rehabilitation specialists, and support staff committed to delivering
+                            personalized care and achieving optimal outcomes for each patient.
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Physical Therapy & Rehabilitation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Sports Medicine & Injury Recovery</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Graston Technique Therapy</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Pain Management Programs</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                    <span class="text-gray-700">Post-Surgical Rehabilitation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Specialized Services</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-hands text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Graston Technique</h3>
+                            <p class="text-gray-600">
+                                Our signature therapy using specialized instruments to effectively treat soft tissue
+                                restrictions and break down scar tissue, promoting faster healing and improved mobility.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-running text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Sports Rehabilitation</h3>
+                            <p class="text-gray-600">
+                                Specialized programs for athletes at all levels focusing on injury recovery, performance
+                                enhancement, and preventive strategies to minimize future injuries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-user-md text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Orthopedic Therapy</h3>
+                            <p class="text-gray-600">
+                                Comprehensive treatment for orthopedic conditions affecting joints, muscles, and bones,
+                                including post-surgical rehabilitation and management of chronic conditions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Neurological Rehabilitation</h3>
+                            <p class="text-gray-600">
+                                Specialized therapy for patients recovering from stroke, traumatic brain injury, spinal
+                                cord injury, and other neurological conditions to improve function and quality of life.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-walking text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Functional Rehabilitation</h3>
+                            <p class="text-gray-600">
+                                Goal-oriented therapy focusing on restoring the ability to perform daily activities and
+                                returning patients to their pre-injury lifestyle with confidence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
+                            <i class="fas fa-heartbeat text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Pain Management</h3>
+                            <p class="text-gray-600">
+                                Comprehensive programs combining various therapeutic techniques to manage chronic pain,
+                                reduce medication dependence, and improve overall function and quality of life.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Approach -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Therapeutic Approach</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="../images/placeholders/physical-therapy.jpg" alt="Physical Therapy Session"
+                            class="rounded-lg shadow-xl">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Patient-Centered Care</h3>
+                        <p class="text-gray-600 mb-6">
+                            At Graston Medical Clinics, we believe in a holistic, patient-centered approach to
+                            rehabilitation. Our treatment plans are tailored to each individual's specific needs,
+                            considering their medical history, lifestyle, and personal goals.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
+                                    <i class="fas fa-clipboard-check text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Comprehensive Assessment</h4>
+                                    <p class="text-gray-600">Detailed evaluation to identify movement limitations,
+                                        functional deficits, and specific needs</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-cog text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Personalized Treatment</h4>
+                                    <p class="text-gray-600">Customized therapy programs based on individual needs and
+                                        recovery goals</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-line text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Progress Monitoring</h4>
+                                    <p class="text-gray-600">Regular reassessment to track improvements and adjust
+                                        treatment plans accordingly</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
+                                    <i class="fas fa-graduation-cap text-blue-800"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Patient Education</h4>
+                                    <p class="text-gray-600">Empowering patients with knowledge and self-management
+                                        techniques for long-term success</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Expert Team</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-md text-blue-800 text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Licensed Physical Therapists</h3>
+                        <p class="text-gray-600">
+                            Our therapists are certified professionals with advanced training in various specialties,
+                            including orthopedics, sports medicine, and neurological rehabilitation.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-certificate text-blue-800 text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Certified Graston Technique Specialists</h3>
+                        <p class="text-gray-600">
+                            Our team includes practitioners specifically trained and certified in the Graston Technique,
+                            ensuring expert application of this specialized therapy.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-blue-800 text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Support Staff</h3>
+                        <p class="text-gray-600">
+                            Our dedicated administrative and support team ensures a seamless patient experience, from
+                            appointment scheduling to insurance coordination and follow-up care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-16 bg-blue-800 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-6">Start Your Healing Journey Today</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-8">
+                    Contact Graston Medical Clinics to schedule a consultation and discover how our specialized therapy
+                    services can help you recover, regain function, and improve your quality of life.
+                </p>
+                <a href="../contact.html"
+                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Book
+                    an Appointment</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                            </li>
+                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@grastonclinics.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Clinic Hours</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li>Monday - Friday:</li>
+                            <li>8:00 AM - 7:00 PM</li>
+                            <li class="pt-2">Saturday:</li>
+                            <li>9:00 AM - 3:00 PM</li>
+                            <li class="pt-2">Sunday:</li>
+                            <li>Closed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../js/script.js"></script>
+    </body>
+
+</html>

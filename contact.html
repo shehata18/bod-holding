@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us - BOD Holdings</title>
+        <meta name="description"
+            content="Get in touch with BOD Holdings - Contact information, office locations and inquiry form.">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            .contact-card {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .contact-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .form-input {
+                transition: all 0.3s ease;
+            }
+
+            .form-input:focus {
+                transform: scale(1.02);
+            }
+
+            .global-office-card {
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .global-office-card:hover .office-overlay {
+                opacity: 1;
+            }
+
+            .office-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-10px);
+                }
+
+                100% {
+                    transform: translateY(0px);
+                }
+            }
+
+            .float-animation {
+                animation: float 3s ease-in-out infinite;
+            }
+
+            .hero-shape {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+            }
+
+            .hero-shape svg {
+                position: relative;
+                display: block;
+                width: calc(100% + 1.3px);
+                height: 150px;
+            }
+
+            .hero-text-gradient {
+                background: linear-gradient(120deg, #4F46E5, #3B82F6, #2563EB);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .animated-background {
+                background: linear-gradient(-45deg, #1E40AF, #1D4ED8, #2563EB, #3B82F6);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+            }
+
+            @keyframes gradient {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .floating-shapes {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 1;
+            }
+
+            .shape {
+                position: absolute;
+                background: rgba(255, 255, 255, 0.1);
+                animation: floatShape 20s linear infinite;
+                border-radius: 50%;
+            }
+
+            @keyframes floatShape {
+                0% {
+                    transform: translateY(100%) rotate(0deg);
+                    opacity: 0;
+                }
+
+                20% {
+                    opacity: 0.3;
+                }
+
+                80% {
+                    opacity: 0.3;
+                }
+
+                100% {
+                    transform: translateY(-100%) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+
+            /* Enhanced background and animation styles */
+            .hero-background {
+                background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 25%, #2563EB 50%, #3B82F6 75%, #60A5FA 100%);
+                background-size: 400% 400%;
+                animation: gradientShift 15s ease infinite;
+            }
+
+            .curved-line {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .curved-line::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 200px;
+                background: rgba(255, 255, 255, 0.05);
+                transform: skewY(-5deg);
+            }
+
+            .animated-circle {
+                position: absolute;
+                border-radius: 50%;
+                background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+                animation: floatCircle 20s infinite linear;
+            }
+
+            .animated-dots {
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                animation: floatDots 8s infinite linear;
+            }
+
+            .hero-text-wrapper {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .hero-text-animation {
+                animation: textReveal 1.5s ease forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            .hero-subtitle-animation {
+                animation: textReveal 1.5s ease forwards 0.5s;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            .geometric-shape {
+                position: absolute;
+                opacity: 0.1;
+                animation: rotateShape 20s infinite linear;
+            }
+
+            @keyframes gradientShift {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                50% {
+                    background-position: 100% 50%;
+                }
+
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            @keyframes floatCircle {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+
+                50% {
+                    transform: translate(100px, 50px) rotate(180deg);
+                }
+
+                100% {
+                    transform: translate(0, 0) rotate(360deg);
+                }
+            }
+
+            @keyframes floatDots {
+                0% {
+                    transform: translateY(0);
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateY(-100vh);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes textReveal {
+                0% {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes rotateShape {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .blur-circle {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(80px);
+                opacity: 0.2;
+                z-index: 1;
+            }
+        </style>
+    </head>
+
+    <body class="font-sans">
+        <!-- Header (Same as index.html) -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="subsidiaries.html" class="text-gray-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="contact.html" class="text-blue-800 hover:text-blue-600 font-medium">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
+                <a href="index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
+                <a href="about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
+                <a href="subsidiaries.html" class="block py-2 text-gray-800 hover:text-blue-600">Subsidiaries</a>
+                <a href="sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
+                <a href="news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
+                <a href="careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
+                <a href="contact.html" class="block py-2 text-blue-800 hover:text-blue-600">Contact</a>
+            </div>
+        </header>
+
+        <!-- Page Banner -->
+        <section class="relative hero-background min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <!-- Curved lines -->
+            <div class="curved-line"></div>
+            <div class="curved-line" style="transform: rotate(180deg)"></div>
+
+            <!-- Animated circles -->
+            <div class="animated-circle" style="width: 300px; height: 300px; top: 10%; left: 5%;"></div>
+            <div class="animated-circle" style="width: 200px; height: 200px; top: 60%; right: 10%;"></div>
+            <div class="animated-circle" style="width: 150px; height: 150px; bottom: 20%; left: 20%;"></div>
+
+            <!-- Geometric shapes -->
+            <div class="geometric-shape" style="top: 20%; left: 10%;">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                    <polygon points="50,0 100,87 0,87" fill="white" />
+                </svg>
+            </div>
+            <div class="geometric-shape" style="bottom: 30%; right: 15%;">
+                <svg width="80" height="80" viewBox="0 0 80 80">
+                    <rect width="80" height="80" fill="white" />
+                </svg>
+            </div>
+
+            <!-- Blur circles for depth -->
+            <div class="blur-circle bg-blue-400" style="width: 400px; height: 400px; top: -100px; left: -100px;"></div>
+            <div class="blur-circle bg-indigo-500" style="width: 350px; height: 350px; bottom: -50px; right: -50px;">
+            </div>
+
+            <!-- Animated dots -->
+            <div class="animated-dots" style="left: 10%;"></div>
+            <div class="animated-dots" style="left: 20%; animation-delay: 2s;"></div>
+            <div class="animated-dots" style="left: 30%; animation-delay: 4s;"></div>
+            <div class="animated-dots" style="left: 40%; animation-delay: 1s;"></div>
+            <div class="animated-dots" style="left: 50%; animation-delay: 3s;"></div>
+            <div class="animated-dots" style="left: 60%; animation-delay: 5s;"></div>
+            <div class="animated-dots" style="left: 70%; animation-delay: 2.5s;"></div>
+            <div class="animated-dots" style="left: 80%; animation-delay: 4.5s;"></div>
+            <div class="animated-dots" style="left: 90%; animation-delay: 1.5s;"></div>
+
+            <!-- Content -->
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div data-aos="fade-up" data-aos-duration="1000" class="text-center hero-text-wrapper">
+                        <div class="relative mb-8">
+                            <h1
+                                class="text-6xl md:text-7xl font-bold hero-text-animation bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white leading-tight">
+                                Contact Us
+                            </h1>
+                            <div class="absolute -top-10 -left-10 w-20 h-20 border-t-2 border-l-2 border-white/20">
+                            </div>
+                            <div class="absolute -bottom-10 -right-10 w-20 h-20 border-b-2 border-r-2 border-white/20">
+                            </div>
+                        </div>
+                        <div class="hero-subtitle-animation">
+                            <p class="text-2xl md:text-3xl text-gray-200 mb-4 leading-relaxed max-w-3xl mx-auto">
+                                Get in touch with BOD Holdings
+                            </p>
+                            <p class="text-3xl md:text-4xl font-light text-white/90 mb-12">
+                                We're here to help you <span
+                                    class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">succeed</span>
+                            </p>
+                        </div>
+                        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mt-12">
+                            <a href="#contact-form"
+                                class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                                <span
+                                    class="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                                <i class="fas fa-paper-plane mr-3 relative z-10"></i>
+                                <span class="relative z-10">Send Message</span>
+                            </a>
+                            <a href="#global-presence"
+                                class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                                <span
+                                    class="absolute inset-0 w-full h-full bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                                <i class="fas fa-globe mr-3"></i>
+                                <span>Global Offices</span>
+                            </a>
+                        </div>
+                        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                            <div
+                                class="flex items-center justify-center space-x-4 text-white/80 hover:text-white transition-colors duration-300">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 float-animation">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <span class="text-lg">24/7 Support</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-center space-x-4 text-white/80 hover:text-white transition-colors duration-300">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 float-animation">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <span class="text-lg">Quick Response</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-center space-x-4 text-white/80 hover:text-white transition-colors duration-300">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 float-animation">
+                                    <i class="fas fa-map-marked-alt text-xl"></i>
+                                </div>
+                                <span class="text-lg">Global Presence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced wave separator -->
+            <div class="hero-shape">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#ffffff" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Contact Card 1 -->
+                    <div data-aos="fade-up" data-aos-delay="0"
+                        class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Visit Us</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-building mr-2"></i>
+                                123 Business Avenue
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-city mr-2"></i>
+                                Business District
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-globe-americas mr-2"></i>
+                                City, Country 12345
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card 2 -->
+                    <div data-aos="fade-up" data-aos-delay="100"
+                        class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Call Us</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                Main: +1 (123) 456-7890
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-comments mr-2"></i>
+                                Support: +1 (123) 456-7891
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Investors: +1 (123) 456-7892
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Card 3 -->
+                    <div data-aos="fade-up" data-aos-delay="200"
+                        class="contact-card bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                        <div class="text-blue-600 text-4xl mb-6 flex justify-center float-animation">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Email Us</h3>
+                        <div class="space-y-2 text-gray-600">
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                info@bodholdings.com
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-life-ring mr-2"></i>
+                                support@bodholdings.com
+                            </p>
+                            <p class="flex items-center justify-center">
+                                <i class="fas fa-briefcase mr-2"></i>
+                                careers@bodholdings.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form & Map -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div data-aos="fade-right" data-aos-duration="1000" id="contact-form">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2">Send Us a Message</h2>
+                            <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                            <p class="text-gray-600 mb-8">Fill out the form below and we'll get back to you as soon as
+                                possible.</p>
+
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="form-group">
+                                        <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                            <i class="fas fa-user mr-2 text-blue-600"></i>First Name *
+                                        </label>
+                                        <input type="text" id="first-name" name="first-name" required
+                                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                            <i class="fas fa-user mr-2 text-blue-600"></i>Last Name *
+                                        </label>
+                                        <input type="text" id="last-name" name="last-name" required
+                                            class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-envelope mr-2 text-blue-600"></i>Email Address *
+                                    </label>
+                                    <input type="email" id="email" name="email" required
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-phone mr-2 text-blue-600"></i>Phone Number
+                                    </label>
+                                    <input type="tel" id="phone" name="phone"
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-tag mr-2 text-blue-600"></i>Subject *
+                                    </label>
+                                    <input type="text" id="subject" name="subject" required
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                                        <i class="fas fa-comment mr-2 text-blue-600"></i>Message *
+                                    </label>
+                                    <textarea id="message" name="message" rows="5" required
+                                        class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"></textarea>
+                                </div>
+
+                                <div>
+                                    <button type="submit"
+                                        class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg hover:bg-blue-700 transition duration-300 flex items-center justify-center font-medium text-lg">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div data-aos="fade-left" data-aos-duration="1000">
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-2">Our Location</h2>
+                            <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                            <p class="text-gray-600 mb-8">Find us at our headquarters in the heart of the business
+                                district.</p>
+
+                            <div
+                                class="h-[400px] bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.7307911762034!2d-122.41941548371092!3d37.77492957975935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1648581626437!5m2!1sen!2sus"
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+                            </div>
+
+                            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-clock text-blue-600 text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Business Hours</h3>
+                                        <p class="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                                        <p class="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-parking text-blue-600 text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Parking</h3>
+                                        <p class="text-gray-600">Free parking available</p>
+                                        <p class="text-gray-600">Accessible parking spots</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence -->
+        <section class="py-20 bg-gray-50" id="global-presence">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Global Presence</h2>
+                    <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">BOD Holdings maintains offices in key locations
+                        worldwide
+                        to better serve our clients and manage our diverse portfolio.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Office 1 -->
+                    <div class="global-office-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="relative h-64">
+                                <img src="https://images.unsplash.com/photo-1522083165195-3424ed129620"
+                                    alt="New York Office" class="w-full h-full object-cover">
+                                <div class="office-overlay">
+                                    <div class="text-center p-4">
+                                        <i class="fas fa-building text-4xl mb-4"></i>
+                                        <p class="text-lg font-semibold">Visit Our New York Office</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-city text-blue-600 text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">New York</h3>
+                                        <div class="space-y-2 text-gray-600">
+                                            <p class="flex items-center">
+                                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                                123 Business Avenue, NY 10001
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+                                                +1 (123) 456-7890
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                                                newyork@bodholdings.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office 2 -->
+                    <div class="global-office-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="relative h-64">
+                                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
+                                    alt="London Office" class="w-full h-full object-cover">
+                                <div class="office-overlay">
+                                    <div class="text-center p-4">
+                                        <i class="fas fa-building text-4xl mb-4"></i>
+                                        <p class="text-lg font-semibold">Visit Our London Office</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-city text-blue-600 text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">London</h3>
+                                        <div class="space-y-2 text-gray-600">
+                                            <p class="flex items-center">
+                                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                                456 Business Street, London WC2N 5DU
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+                                                +44 20 1234 5678
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                                                london@bodholdings.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office 3 -->
+                    <div class="global-office-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                            <div class="relative h-64">
+                                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+                                    alt="Dubai Office" class="w-full h-full object-cover">
+                                <div class="office-overlay">
+                                    <div class="text-center p-4">
+                                        <i class="fas fa-building text-4xl mb-4"></i>
+                                        <p class="text-lg font-semibold">Visit Our Dubai Office</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start space-x-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-city text-blue-600 text-xl"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold text-gray-800 mb-2">Dubai</h3>
+                                        <div class="space-y-2 text-gray-600">
+                                            <p class="flex items-center">
+                                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                                789 Business Bay, Dubai 12345
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+                                                +971 4 123 4567
+                                            </p>
+                                            <p class="flex items-center">
+                                                <i class="fas fa-envelope mr-2 text-blue-600"></i>
+                                                dubai@bodholdings.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Find answers to the most common questions about BOD
+                        Holdings.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none"
+                            onclick="toggleFAQ(this)">
+                            <h3 class="text-lg font-medium text-gray-800">How can I invest in BOD Holdings?</h3>
+                            <svg class="w-5 h-5 text-blue-800 transform rotate-0 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-600">
+                            For investment opportunities, please contact our investor relations department at
+                            investors@bodholdings.com or call +1 (123) 456-7892. Our team will provide you with all
+                            necessary information about current investment opportunities.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none"
+                            onclick="toggleFAQ(this)">
+                            <h3 class="text-lg font-medium text-gray-800">How can I become a partner or supplier?</h3>
+                            <svg class="w-5 h-5 text-blue-800 transform rotate-0 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-600">
+                            We're always looking for strategic partnerships and reliable suppliers. Please send your
+                            company profile and partnership proposal to partnerships@bodholdings.com. Our business
+                            development team will review your information and get back to you.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none"
+                            onclick="toggleFAQ(this)">
+                            <h3 class="text-lg font-medium text-gray-800">What subsidiaries are part of BOD Holdings?
+                            </h3>
+                            <svg class="w-5 h-5 text-blue-800 transform rotate-0 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-600">
+                            BOD Holdings manages a diverse portfolio of subsidiaries across multiple sectors including
+                            real estate, technology, finance, manufacturing, and more. Visit our Subsidiaries page for
+                            detailed information about each company in our portfolio.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-md">
+                        <button class="flex justify-between items-center w-full text-left focus:outline-none"
+                            onclick="toggleFAQ(this)">
+                            <h3 class="text-lg font-medium text-gray-800">Are there job opportunities at BOD Holdings?
+                            </h3>
+                            <svg class="w-5 h-5 text-blue-800 transform rotate-0 transition-transform duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer hidden mt-4 text-gray-600">
+                            Yes, we regularly have openings across our various subsidiaries and corporate offices. Visit
+                            our Careers page to see current openings and submit your application. You can also send your
+                            resume to careers@bodholdings.com for future opportunities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer (Same as index.html) -->
+        <footer class="bg-gray-900 text-white pt-16 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                            multiple sectors.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a></li>
+                            <li><a href="sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
+                            <li><a href="news.html" class="text-gray-400 hover:text-white">News</a></li>
+                            <li><a href="careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
+                            <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <span class="text-gray-400">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
+                        <form class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Your Email"
+                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <button type="submit"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+
+            // FAQ Toggle Function
+            function toggleFAQ(element) {
+                const answer = element.nextElementSibling;
+                const icon = element.querySelector('svg');
+
+                // Toggle the answer visibility
+                answer.classList.toggle('hidden');
+
+                // Toggle the icon rotation
+                if (answer.classList.contains('hidden')) {
+                    icon.classList.remove('rotate-180');
+                    icon.classList.add('rotate-0');
+                } else {
+                    icon.classList.remove('rotate-0');
+                    icon.classList.add('rotate-180');
+                }
+            }
+        </script>
+    </body>
+
+</html>
