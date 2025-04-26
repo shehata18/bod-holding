@@ -7,32 +7,327 @@
         <title>Graston Medical Clinics - BOD Holdings</title>
         <meta name="description"
             content="Graston Medical Clinics (عيادات جراسستون للعلاج الطبيعي) provides specialized physical therapy and rehabilitation services.">
+        <!-- Modern CSS framework -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
         <link rel="stylesheet" href="../css/styles.css">
+        <!-- Modern icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- AOS library for animations -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Custom styles -->
+        <style>
+            /* Modern styling */
+            :root {
+                --primary: #2563eb;
+                --primary-dark: #1e40af;
+                --secondary: #0f172a;
+                --light: #f8fafc;
+                --gray: #64748b;
+            }
+
+            html,
+            body {
+                overflow-x: hidden;
+                max-width: 100%;
+            }
+
+            .hero-section {
+                position: relative;
+                background-color: var(--primary-dark);
+                height: 80vh;
+                min-height: 600px;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .hero-section::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: -2px;
+                right: -2px;
+                height: 120px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,128C672,128,768,160,864,176C960,192,1056,192,1152,176C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 10;
+            }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: -2px;
+                right: -2px;
+                height: 140px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.3' d='M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,181.3C672,192,768,160,864,154.7C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 9;
+                opacity: 0.5;
+            }
+
+            .hero-content {
+                position: relative;
+                z-index: 20;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(45deg, #fff, #e2e8f0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.9);
+                margin-bottom: 2rem;
+            }
+
+            .hero-button {
+                display: inline-flex;
+                align-items: center;
+                background: #fff;
+                color: var(--primary-dark);
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+                background: var(--light);
+            }
+
+            .service-card {
+                transition: all 0.3s ease;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            .service-icon {
+                transition: all 0.3s ease;
+            }
+
+            .service-card:hover .service-icon {
+                transform: scale(1.2);
+            }
+
+            .team-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 12px;
+                transition: all 0.3s ease;
+            }
+
+            .team-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            .modern-button {
+                background-color: var(--primary);
+                color: white;
+                border-radius: 8px;
+                padding: 12px 24px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-block;
+            }
+
+            .modern-button:hover {
+                background-color: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+
+            .section-title {
+                position: relative;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                height: 4px;
+                width: 60px;
+                background-color: var(--primary);
+                border-radius: 2px;
+            }
+
+            .scroll-to-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background-color: var(--primary);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 1000;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .scroll-to-top.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .scroll-to-top:hover {
+                background-color: var(--primary-dark);
+                transform: translateY(-5px);
+            }
+
+            /* Add floating animations */
+            @keyframes float-up-down {
+
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                50% {
+                    transform: translateY(-20px);
+                }
+            }
+
+            @keyframes float-left-right {
+
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+
+                50% {
+                    transform: translateX(20px);
+                }
+            }
+
+            @keyframes rotate-slow {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .floating-objects {
+                position: absolute;
+                inset: 0;
+                z-index: 5;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            .floating-object {
+                position: absolute;
+                opacity: 0.15;
+                color: white;
+            }
+
+            .float-1 {
+                top: 15%;
+                left: 10%;
+                font-size: 3rem;
+                animation: float-up-down 4s ease-in-out infinite;
+            }
+
+            .float-2 {
+                top: 25%;
+                right: 15%;
+                font-size: 2.5rem;
+                animation: float-left-right 5s ease-in-out infinite;
+            }
+
+            .float-3 {
+                bottom: 30%;
+                left: 20%;
+                font-size: 2rem;
+                animation: rotate-slow 8s linear infinite;
+            }
+
+            .float-4 {
+                top: 40%;
+                right: 25%;
+                font-size: 2.8rem;
+                animation: float-up-down 6s ease-in-out infinite;
+            }
+
+            .float-5 {
+                bottom: 25%;
+                right: 10%;
+                font-size: 2.2rem;
+                animation: float-left-right 7s ease-in-out infinite;
+            }
+        </style>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
 
     <body class="font-sans">
-        <!-- Header -->
-        <header class="bg-white shadow-md sticky top-0 z-50">
-            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Modern Header -->
+        <header class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                    <a href="../index.html"
+                        class="text-2xl font-bold text-blue-800 transition-colors duration-300 hover:text-blue-600">BOD</a>
                 </div>
 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
-                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../index.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Home</a>
+                    <a href="../about.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">About</a>
                     <a href="../subsidiaries.html"
-                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
-                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
-                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
-                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
-                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                        class="text-blue-800 hover:text-blue-600 font-medium transition-colors duration-300">Subsidiaries</a>
+                    <a href="../sectors.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Sectors</a>
+                    <a href="../news.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">News</a>
+                    <a href="../careers.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Careers</a>
+                    <a href="../contact.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a>
                 </nav>
 
                 <div class="flex items-center space-x-4">
-                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="language-toggle"
+                        class="text-blue-800 hover:text-blue-600 transition-colors duration-300">EN | عربي</button>
                     <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -45,93 +340,127 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
-                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
-                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
-                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
-                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
-                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
-                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
-                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+                <a href="../index.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">Home</a>
+                <a href="../about.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">About</a>
+                <a href="../subsidiaries.html"
+                    class="block py-2 text-blue-800 hover:text-blue-600 transition-colors duration-300">Subsidiaries</a>
+                <a href="../sectors.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">Sectors</a>
+                <a href="../news.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">News</a>
+                <a href="../careers.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">Careers</a>
+                <a href="../contact.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-colors duration-300">Contact</a>
             </div>
         </header>
 
-        <!-- Banner -->
-        <section class="relative bg-blue-900 text-white py-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
-            <div class="absolute inset-0 bg-[url('../images/GC%20Company.jpg')] bg-cover bg-center mix-blend-overlay">
+        <!-- Modern Hero Banner -->
+        <section class="hero-section">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 opacity-85"></div>
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center mix-blend-overlay">
             </div>
-            <div class="container mx-auto px-4 relative z-10">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Graston Medical Clinics</h1>
-                <p class="text-xl max-w-3xl">عيادات جراسستون للعلاج الطبيعي - Specialized physical therapy and
+
+            <!-- Floating Medical Objects -->
+            <div class="floating-objects">
+                <i class="fas fa-heartbeat floating-object float-1"></i>
+                <i class="fas fa-stethoscope floating-object float-2"></i>
+                <i class="fas fa-hand-holding-medical floating-object float-3"></i>
+                <i class="fas fa-notes-medical floating-object float-4"></i>
+                <i class="fas fa-hospital floating-object float-5"></i>
+            </div>
+
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title">Graston Medical Clinics</h1>
+                <p class="hero-subtitle">عيادات جراسستون للعلاج الطبيعي - Specialized physical therapy and
                     rehabilitation services for optimal recovery and wellness.</p>
+                <a href="#services" class="hero-button">
+                    Explore Our Services
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </a>
             </div>
         </section>
 
-        <!-- Company Overview -->
-        <section class="py-16 bg-white">
+        <!-- Modern Company Overview -->
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2">
-                        <img src="../images/GC%20Company.jpg" alt="Graston Medical Clinics Logo"
-                            class="rounded-lg shadow-xl w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                            alt="Graston Medical Clinics" class="rounded-xl shadow-2xl w-full">
                     </div>
-                    <div class="lg:w-1/2">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About Graston Medical Clinics</h2>
-                        <p class="text-gray-600 mb-4">
+                    <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">About Graston Medical Clinics</h2>
+                        <div class="w-20 h-1 bg-blue-600 mb-8 rounded-full"></div>
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
                             عيادات جراسستون للعلاج الطبيعي (Graston Medical Clinics) is a network of specialized
                             physical therapy and rehabilitation centers dedicated to providing innovative,
-                            evidence-based
-                            treatment for patients recovering from injuries, surgeries, or managing chronic conditions.
+                            evidence-based treatment for patients recovering from injuries, surgeries, or managing
+                            chronic conditions.
                         </p>
-                        <p class="text-gray-600 mb-6">
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
                             Our clinics feature state-of-the-art equipment and are staffed by highly trained physical
                             therapists, rehabilitation specialists, and support staff committed to delivering
                             personalized care and achieving optimal outcomes for each patient.
                         </p>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                        <div class="bg-blue-50 p-8 rounded-xl border-l-4 border-blue-600 shadow-md">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Core Services</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-start transition-transform duration-300 hover:translate-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
                                     <span class="text-gray-700">Physical Therapy & Rehabilitation</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                </div>
+                                <div class="flex items-start transition-transform duration-300 hover:translate-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
                                     <span class="text-gray-700">Sports Medicine & Injury Recovery</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                </div>
+                                <div class="flex items-start transition-transform duration-300 hover:translate-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
                                     <span class="text-gray-700">Graston Technique Therapy</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                </div>
+                                <div class="flex items-start transition-transform duration-300 hover:translate-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
                                     <span class="text-gray-700">Pain Management Programs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                </div>
+                                <div class="flex items-start transition-transform duration-300 hover:translate-x-2">
+                                    <i class="fas fa-check-circle text-blue-600 text-xl mt-1 mr-3"></i>
                                     <span class="text-gray-700">Post-Surgical Rehabilitation</span>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services -->
-        <section class="py-16 bg-gray-50">
+        <!-- Modern Services Section -->
+        <section id="services" class="py-24 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Specialized Services</h2>
+                <h2 class="section-title text-4xl font-bold text-center text-gray-800">Our Specialized Services</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-16">
                     <!-- Service 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-hands text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Graston Technique"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Graston Technique</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-hands service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Graston Technique</h3>
+                            <p class="text-gray-600 text-center">
                                 Our signature therapy using specialized instruments to effectively treat soft tissue
                                 restrictions and break down scar tissue, promoting faster healing and improved mobility.
                             </p>
@@ -139,13 +468,19 @@
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-running text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Sports Rehabilitation"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Sports Rehabilitation</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-running service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sports Rehabilitation</h3>
+                            <p class="text-gray-600 text-center">
                                 Specialized programs for athletes at all levels focusing on injury recovery, performance
                                 enhancement, and preventive strategies to minimize future injuries.
                             </p>
@@ -153,13 +488,19 @@
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-user-md text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Orthopedic Therapy"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Orthopedic Therapy</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-bone service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Orthopedic Therapy</h3>
+                            <p class="text-gray-600 text-center">
                                 Comprehensive treatment for orthopedic conditions affecting joints, muscles, and bones,
                                 including post-surgical rehabilitation and management of chronic conditions.
                             </p>
@@ -167,13 +508,20 @@
                     </div>
 
                     <!-- Service 4 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-heartbeat text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Neurological Rehabilitation"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Neurological Rehabilitation</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-brain service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Neurological Rehabilitation
+                            </h3>
+                            <p class="text-gray-600 text-center">
                                 Specialized therapy for patients recovering from stroke, traumatic brain injury, spinal
                                 cord injury, and other neurological conditions to improve function and quality of life.
                             </p>
@@ -181,13 +529,19 @@
                     </div>
 
                     <!-- Service 5 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-walking text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Functional Rehabilitation"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Functional Rehabilitation</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-walking service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Functional Rehabilitation</h3>
+                            <p class="text-gray-600 text-center">
                                 Goal-oriented therapy focusing on restoring the ability to perform daily activities and
                                 returning patients to their pre-injury lifestyle with confidence.
                             </p>
@@ -195,13 +549,19 @@
                     </div>
 
                     <!-- Service 6 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-heartbeat text-6xl"></i>
+                    <div class="service-card bg-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Pain Management"
+                                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110">
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Pain Management</h3>
-                            <p class="text-gray-600">
+                        <div class="p-8">
+                            <div
+                                class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto -mt-16 mb-6 border-4 border-white shadow-lg">
+                                <i class="fas fa-heartbeat service-icon text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Pain Management</h3>
+                            <p class="text-gray-600 text-center">
                                 Comprehensive programs combining various therapeutic techniques to manage chronic pain,
                                 reduce medication dependence, and improve overall function and quality of life.
                             </p>
@@ -211,68 +571,85 @@
             </div>
         </section>
 
-        <!-- Our Approach -->
-        <section class="py-16 bg-white">
+        <!-- Modern Approach Section -->
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Therapeutic Approach</h2>
+                <h2 class="section-title text-4xl font-bold text-center text-gray-800">Our Therapeutic Approach</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <img src="../images/placeholders/physical-therapy.jpg" alt="Physical Therapy Session"
-                            class="rounded-lg shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                            alt="Physical Therapy Session" class="rounded-xl shadow-xl w-full h-full object-cover">
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Patient-Centered Care</h3>
-                        <p class="text-gray-600 mb-6">
+                    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-6">Patient-Centered Care</h3>
+                        <div class="w-20 h-1 bg-blue-600 mb-8 rounded-full"></div>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
                             At Graston Medical Clinics, we believe in a holistic, patient-centered approach to
                             rehabilitation. Our treatment plans are tailored to each individual's specific needs,
                             considering their medical history, lifestyle, and personal goals.
                         </p>
 
-                        <div class="space-y-4">
-                            <div class="flex items-start">
+                        <div class="space-y-6">
+                            <div class="flex items-start group">
                                 <div
-                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
-                                    <i class="fas fa-clipboard-check text-blue-800"></i>
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-4 flex items-center justify-center mr-4 
+                                            transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                                    <i
+                                        class="fas fa-clipboard-check text-blue-800 text-xl transition-all duration-300 group-hover:text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold text-gray-800">Comprehensive Assessment</h4>
+                                    <h4
+                                        class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                                        Comprehensive Assessment</h4>
                                     <p class="text-gray-600">Detailed evaluation to identify movement limitations,
                                         functional deficits, and specific needs</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start">
+                            <div class="flex items-start group">
                                 <div
-                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
-                                    <i class="fas fa-user-cog text-blue-800"></i>
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-4 flex items-center justify-center mr-4 
+                                            transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                                    <i
+                                        class="fas fa-user-cog text-blue-800 text-xl transition-all duration-300 group-hover:text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold text-gray-800">Personalized Treatment</h4>
+                                    <h4
+                                        class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                                        Personalized Treatment</h4>
                                     <p class="text-gray-600">Customized therapy programs based on individual needs and
                                         recovery goals</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start">
+                            <div class="flex items-start group">
                                 <div
-                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
-                                    <i class="fas fa-chart-line text-blue-800"></i>
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-4 flex items-center justify-center mr-4 
+                                            transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                                    <i
+                                        class="fas fa-chart-line text-blue-800 text-xl transition-all duration-300 group-hover:text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold text-gray-800">Progress Monitoring</h4>
+                                    <h4
+                                        class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                                        Progress Monitoring</h4>
                                     <p class="text-gray-600">Regular reassessment to track improvements and adjust
                                         treatment plans accordingly</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start">
+                            <div class="flex items-start group">
                                 <div
-                                    class="flex-shrink-0 bg-blue-100 rounded-full p-2 flex items-center justify-center mr-4">
-                                    <i class="fas fa-graduation-cap text-blue-800"></i>
+                                    class="flex-shrink-0 bg-blue-100 rounded-full p-4 flex items-center justify-center mr-4 
+                                            transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white">
+                                    <i
+                                        class="fas fa-graduation-cap text-blue-800 text-xl transition-all duration-300 group-hover:text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-semibold text-gray-800">Patient Education</h4>
+                                    <h4
+                                        class="text-xl font-semibold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                                        Patient Education</h4>
                                     <p class="text-gray-600">Empowering patients with knowledge and self-management
                                         techniques for long-term success</p>
                                 </div>
@@ -283,136 +660,355 @@
             </div>
         </section>
 
-        <!-- Our Team -->
-        <section class="py-16 bg-gray-50">
+        <!-- Modern Team Section with Enhanced Design -->
+        <section class="py-24 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Expert Team</h2>
+                <h2 class="section-title text-4xl font-bold text-center text-gray-800">Our Expert Team</h2>
+                <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">Meet the dedicated specialists who
+                    are committed to providing exceptional care and helping you achieve your recovery goals.</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-user-md text-blue-800 text-4xl"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+                    <!-- Team Member 1 -->
+                    <div class="team-card bg-white overflow-hidden shadow-lg rounded-xl" data-aos="fade-up"
+                        data-aos-duration="800">
+                        <div class="h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+                                alt="Physical Therapists"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Licensed Physical Therapists</h3>
-                        <p class="text-gray-600">
-                            Our therapists are certified professionals with advanced training in various specialties,
-                            including orthopedics, sports medicine, and neurological rehabilitation.
-                        </p>
+                        <div class="relative px-6 pb-6">
+                            <div
+                                class="absolute -top-10 left-0 right-0 mx-auto w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                                <i class="fas fa-user-md text-white text-2xl"></i>
+                            </div>
+                            <div class="pt-12 text-center">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Licensed Physical Therapists</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Our therapists are certified professionals with advanced training in various
+                                    specialties,
+                                    including orthopedics, sports medicine, and neurological rehabilitation.
+                                </p>
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-certificate text-blue-800 text-4xl"></i>
+                    <!-- Team Member 2 -->
+                    <div class="team-card bg-white overflow-hidden shadow-lg rounded-xl" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="100">
+                        <div class="h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+                                alt="Graston Technique Specialists"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Certified Graston Technique Specialists</h3>
-                        <p class="text-gray-600">
-                            Our team includes practitioners specifically trained and certified in the Graston Technique,
-                            ensuring expert application of this specialized therapy.
-                        </p>
+                        <div class="relative px-6 pb-6">
+                            <div
+                                class="absolute -top-10 left-0 right-0 mx-auto w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                                <i class="fas fa-certificate text-white text-2xl"></i>
+                            </div>
+                            <div class="pt-12 text-center">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Graston Technique Specialists</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Our team includes practitioners specifically trained and certified in the Graston
+                                    Technique,
+                                    ensuring expert application of this specialized therapy.
+                                </p>
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="w-32 h-32 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-hands-helping text-blue-800 text-4xl"></i>
+                    <!-- Team Member 3 -->
+                    <div class="team-card bg-white overflow-hidden shadow-lg rounded-xl" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="200">
+                        <div class="h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1582056615449-5dcb2332b3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80"
+                                alt="Support Staff"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Support Staff</h3>
-                        <p class="text-gray-600">
-                            Our dedicated administrative and support team ensures a seamless patient experience, from
-                            appointment scheduling to insurance coordination and follow-up care.
-                        </p>
+                        <div class="relative px-6 pb-6">
+                            <div
+                                class="absolute -top-10 left-0 right-0 mx-auto w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+                                <i class="fas fa-hands-helping text-white text-2xl"></i>
+                            </div>
+                            <div class="pt-12 text-center">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-4">Support Staff</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Our dedicated administrative and support team ensures a seamless patient experience,
+                                    from
+                                    appointment scheduling to insurance coordination and follow-up care.
+                                </p>
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white">
+                                        <i class="fas fa-envelope"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Team Section Call to Action -->
+                <div class="mt-16 text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <a href="../careers.html"
+                        class="inline-flex items-center bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        <span>Join Our Team</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="py-16 bg-blue-800 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6">Start Your Healing Journey Today</h2>
-                <p class="text-xl max-w-3xl mx-auto mb-8">
+        <!-- Modern CTA Section -->
+        <section class="py-20 bg-gradient-to-r from-blue-800 to-blue-600 text-white relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1606318313496-c95ed3581940?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center opacity-20">
+            </div>
+            <div class="container mx-auto px-4 text-center relative z-10" data-aos="fade-up" data-aos-duration="1000">
+                <h2 class="text-4xl font-bold mb-6">Start Your Healing Journey Today</h2>
+                <p class="text-xl max-w-3xl mx-auto mb-10 text-blue-100">
                     Contact Graston Medical Clinics to schedule a consultation and discover how our specialized therapy
                     services can help you recover, regain function, and improve your quality of life.
                 </p>
                 <a href="../contact.html"
-                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Book
-                    an Appointment</a>
+                    class="inline-flex items-center bg-white text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                    <span>Book an Appointment</span>
+                    <i class="fas fa-calendar-check ml-2"></i>
+                </a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <!-- Scroll to top button -->
+        <div class="scroll-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+
+        <!-- Modern Footer -->
+        <footer class="bg-gray-900 text-white pt-20 pb-8">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
-                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                        <h3 class="text-2xl font-bold mb-6">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Building a diverse portfolio of successful
+                            businesses across
                             multiple sectors.</p>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-400 hover:text-white transition-all duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-blue-800 hover:text-white transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:text-white transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
-                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                        <h3 class="text-2xl font-bold mb-6">Quick Links</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="../index.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>Home</span>
+                                </a>
                             </li>
-                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
-                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
-                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
-                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                            <li>
+                                <a href="../about.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../subsidiaries.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>Subsidiaries</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../sectors.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>Sectors</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../news.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>News</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../careers.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>Careers</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../contact.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i>
+                                    <span>Contact</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                        <ul class="space-y-2">
+                        <h3 class="text-2xl font-bold mb-6">Contact Info</h3>
+                        <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <i class="fas fa-map-marker-alt mt-1.5 mr-3 text-blue-500"></i>
                                 <span class="text-gray-400">123 Business Avenue, City, Country</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <i class="fas fa-phone mt-1.5 mr-3 text-blue-500"></i>
                                 <span class="text-gray-400">+1 (123) 456-7890</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <i class="fas fa-envelope mt-1.5 mr-3 text-blue-500"></i>
                                 <span class="text-gray-400">info@grastonclinics.com</span>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Clinic Hours</h3>
+                        <h3 class="text-2xl font-bold mb-6">Clinic Hours</h3>
                         <ul class="space-y-2 text-gray-400">
-                            <li>Monday - Friday:</li>
-                            <li>8:00 AM - 7:00 PM</li>
-                            <li class="pt-2">Saturday:</li>
-                            <li>9:00 AM - 3:00 PM</li>
-                            <li class="pt-2">Sunday:</li>
-                            <li>Closed</li>
+                            <li class="flex justify-between">
+                                <span>Monday - Friday:</span>
+                                <span>8:00 AM - 7:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Saturday:</span>
+                                <span>9:00 AM - 3:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>Sunday:</span>
+                                <span>Closed</span>
+                            </li>
                         </ul>
+                        <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                            <h4 class="font-semibold mb-2">Emergency Contact</h4>
+                            <p class="text-blue-400">+1 (123) 456-7899</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="border-t border-gray-800 pt-6">
+                <div class="border-t border-gray-800 pt-8">
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
                         <div class="flex space-x-6">
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy
+                                Policy</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of
+                                Service</a>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
 
+        <!-- Scripts -->
         <script src="../js/script.js"></script>
+        <!-- AOS Animation Library -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            // Initialize AOS animations
+            AOS.init({
+                once: false,
+                mirror: true
+            });
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Sticky header effect
+            window.addEventListener('scroll', function () {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2');
+                    header.classList.remove('py-4');
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.remove('py-2');
+                    header.classList.add('py-4');
+                    header.classList.remove('shadow-lg');
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        document.querySelector(targetId).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll to top button functionality
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    scrollToTopButton.classList.add('active');
+                } else {
+                    scrollToTopButton.classList.remove('active');
+                }
+            });
+
+            scrollToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
     </body>
 
 </html>

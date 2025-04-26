@@ -9,30 +9,141 @@
             content="LO Uniforms (مؤسسة فخامة الزي التجاري) specializes in high-quality corporate and institutional uniforms for diverse industries.">
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/styles.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- AOS Animation Library -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!-- Custom Page Styles -->
+        <style>
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+
+            .hero-section {
+                background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+
+            .hero-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.5);
+                /* Dark transparent overlay */
+            }
+
+            .service-card {
+                transition: all 0.3s ease;
+                overflow: hidden;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            .service-card .icon-wrapper {
+                transition: all 0.3s ease;
+            }
+
+            .service-card:hover .icon-wrapper {
+                transform: scale(1.1);
+            }
+
+            .industry-card {
+                transition: all 0.3s ease;
+            }
+
+            .industry-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                border-color: #3b82f6;
+            }
+
+            .nav-link {
+                position: relative;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: #3b82f6;
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            .nav-link.active::after {
+                width: 100%;
+            }
+
+            .scroll-down {
+                animation: bounce 2s infinite;
+            }
+
+            @keyframes bounce {
+
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0);
+                }
+
+                40% {
+                    transform: translateY(-10px);
+                }
+
+                60% {
+                    transform: translateY(-5px);
+                }
+            }
+        </style>
     </head>
 
-    <body class="font-sans">
+    <body class="font-sans bg-gray-50">
         <!-- Header -->
         <header class="bg-white shadow-md sticky top-0 z-50">
             <div class="container mx-auto px-4 py-3 flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800 flex items-center">
+                        <span class="mr-2">BOD</span>
+                        <span class="text-sm text-blue-600 font-medium">Holdings</span>
+                    </a>
                 </div>
 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
-                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../index.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">Home</a>
+                    <a href="../about.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">About</a>
                     <a href="../subsidiaries.html"
-                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
-                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
-                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
-                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
-                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                        class="nav-link active text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
+                    <a href="../sectors.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
+                    <a href="../news.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">News</a>
+                    <a href="../careers.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">Careers</a>
+                    <a href="../contact.html" class="nav-link text-gray-800 hover:text-blue-600 font-medium">Contact</a>
                 </nav>
 
                 <div class="flex items-center space-x-4">
-                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
+                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600 flex items-center">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span>EN | عربي</span>
+                    </button>
                     <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -55,62 +166,107 @@
             </div>
         </header>
 
-        <!-- Banner -->
-        <section class="relative bg-blue-900 text-white py-20">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
-            <div class="absolute inset-0 bg-[url('../images/LO%20Company.jpg')] bg-cover bg-center mix-blend-overlay">
-            </div>
+        <!-- Banner / Hero Section -->
+        <section class="hero-section relative min-h-screen flex items-center justify-center text-white py-20">
             <div class="container mx-auto px-4 relative z-10">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">LO Uniforms</h1>
-                <p class="text-xl max-w-3xl">مؤسسة فخامة الزي التجاري - Premium quality uniforms tailored for
-                    professionals across industries.</p>
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-8">LO Uniforms</h1>
+                    <p class="text-xl md:text-2xl mb-10 text-white">مؤسسة فخامة الزي التجاري - Crafting premium
+                        quality uniforms that elevate your brand's professional image.</p>
+                    <div class="flex flex-wrap justify-center gap-4 mb-16">
+                        <a href="#products"
+                            class="bg-white text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-md font-medium transition duration-300 transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-tshirt mr-2"></i> Explore Products
+                        </a>
+                        <a href="../contact.html"
+                            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-md font-medium transition duration-300 transform hover:scale-105">
+                            <i class="fas fa-envelope mr-2"></i> Contact Us
+                        </a>
+                    </div>
+
+                    <!-- Scroll Down Indicator - Now placed under the content -->
+                    <div class="text-center mt-8">
+                        <a href="#about" class="text-white inline-block scroll-down">
+                            <i class="fas fa-chevron-down text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Company Overview -->
-        <section class="py-16 bg-white">
+        <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2">
-                        <img src="../images/LO%20Company.jpg" alt="LO Uniforms Logo"
-                            class="rounded-lg shadow-xl w-full">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                            alt="LO Uniforms Manufacturing" class="rounded-xl shadow-2xl w-full object-cover h-[500px]">
                     </div>
-                    <div class="lg:w-1/2">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About LO Uniforms</h2>
-                        <p class="text-gray-600 mb-4">
+                    <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full mb-6">
+                            About Us
+                        </div>
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">Creating Uniforms That <span
+                                class="text-blue-600">Empower Brands</span></h2>
+                        <p class="text-gray-600 mb-5 text-lg">
                             مؤسسة فخامة الزي التجاري (LO) specializes in designing, manufacturing, and supplying
                             high-quality uniforms for a variety of industries and institutions. We take pride in our
                             meticulous craftsmanship and attention to detail.
                         </p>
-                        <p class="text-gray-600 mb-6">
+                        <p class="text-gray-600 mb-8 text-lg">
                             With a focus on durability, comfort, and professional appearance, LO Uniforms has become a
                             trusted partner for organizations seeking to create a cohesive and polished identity through
                             their staff attire.
                         </p>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Expertise</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Corporate & Business Uniforms</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Hospitality & Service Industry Attire</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Healthcare & Medical Uniforms</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Educational Institution Uniforms</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Industrial & Safety Workwear</span>
-                                </li>
-                            </ul>
+                        <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 shadow-sm">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Our Expertise</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-start">
+                                    <div class="text-blue-600 bg-blue-100 rounded-full p-2 mt-1 mr-3">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Corporate Uniforms</h4>
+                                        <p class="text-gray-600 text-sm">Professional business attire</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-blue-600 bg-blue-100 rounded-full p-2 mt-1 mr-3">
+                                        <i class="fas fa-concierge-bell"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Hospitality Attire</h4>
+                                        <p class="text-gray-600 text-sm">Elegant service industry uniforms</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-blue-600 bg-blue-100 rounded-full p-2 mt-1 mr-3">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Healthcare Uniforms</h4>
+                                        <p class="text-gray-600 text-sm">Functional medical attire</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-blue-600 bg-blue-100 rounded-full p-2 mt-1 mr-3">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Educational Uniforms</h4>
+                                        <p class="text-gray-600 text-sm">Quality school & institution wear</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="text-blue-600 bg-blue-100 rounded-full p-2 mt-1 mr-3">
+                                        <i class="fas fa-hard-hat"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-1">Industrial Workwear</h4>
+                                        <p class="text-gray-600 text-sm">Safe & durable industrial uniforms</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,92 +274,147 @@
         </section>
 
         <!-- Products & Services -->
-        <section class="py-16 bg-gray-50">
+        <section id="products" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Products & Services</h2>
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full mb-6">
+                        What We Offer
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Our Products & Services</h2>
+                    <p class="text-gray-600 text-lg">Discover our comprehensive range of uniform solutions designed to
+                        meet the specific needs of diverse industries and organizations.</p>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-tshirt text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="100">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-tshirt text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Custom Uniform Design</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Custom Uniform Design</h3>
                             <p class="text-gray-600">
                                 Collaborative design process to create uniforms that perfectly represent your brand
                                 identity while ensuring comfort and functionality for your staff.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-cut text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="200">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-cut text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Tailoring & Alterations</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Tailoring & Alterations</h3>
                             <p class="text-gray-600">
                                 Professional tailoring services to ensure perfect fit for all employees, with
                                 alterations available for changing staff or uniform updates.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-users text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="300">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-users text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Bulk Manufacturing</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Bulk Manufacturing</h3>
                             <p class="text-gray-600">
                                 Large-scale production capabilities to outfit entire organizations with consistent,
                                 high-quality uniforms while maintaining reasonable lead times.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 4 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-hard-hat text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="400">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-hard-hat text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Safety & Workwear</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Safety & Workwear</h3>
                             <p class="text-gray-600">
                                 Specialized protective clothing and safety gear for industrial environments, compliant
                                 with safety regulations while maintaining professional appearance.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 5 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-truck text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="500">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-truck text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Distribution & Fulfillment</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Distribution & Fulfillment</h3>
                             <p class="text-gray-600">
                                 Efficient distribution systems to ensure timely delivery of uniforms to multiple
                                 locations, with inventory management solutions for large organizations.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 6 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-paint-brush text-6xl"></i>
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="600">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-paint-brush text-7xl"></i>
+                            </div>
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-3">Branding & Embroidery</h3>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-4">Branding & Embroidery</h3>
                             <p class="text-gray-600">
                                 Professional embroidery, screen printing, and other branding techniques to incorporate
                                 logos and corporate identity elements into uniform designs.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 hover:text-blue-800 font-medium transition duration-300">
+                                Learn more <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -211,72 +422,95 @@
         </section>
 
         <!-- Industries Served -->
-        <section class="py-16 bg-white">
+        <section id="industries" class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Industries We Serve</h2>
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full mb-6">
+                        Our Reach
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Industries We Serve</h2>
+                    <p class="text-gray-600 text-lg">We provide tailored uniform solutions for a wide range of
+                        industries, each with their unique requirements and standards.</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-hotel"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Hospitality</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Hospitality</h3>
                         <p class="text-gray-600">Hotels, restaurants, resorts, and event staff uniforms</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-hospital"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Healthcare</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Healthcare</h3>
                         <p class="text-gray-600">Medical scrubs, lab coats, and administrative staff attire</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-building"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Corporate</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Corporate</h3>
                         <p class="text-gray-600">Office uniforms, business attire, and corporate identity wear</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Education</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Education</h3>
                         <p class="text-gray-600">School uniforms, sports attire, and faculty clothing</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-industry"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Industrial</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Industrial</h3>
                         <p class="text-gray-600">Workwear, safety gear, and factory uniforms</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Security</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Security</h3>
                         <p class="text-gray-600">Security personnel uniforms, guard outfits, and safety wear</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="700">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-store"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Retail</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Retail</h3>
                         <p class="text-gray-600">Store staff uniforms, promotional wear, and brand apparel</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
+                    <div class="industry-card bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center"
+                        data-aos="zoom-in" data-aos-duration="800" data-aos-delay="800">
+                        <div
+                            class="text-blue-600 text-5xl mb-6 mx-auto bg-blue-50 rounded-full w-24 h-24 flex items-center justify-center">
                             <i class="fas fa-plane"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Transportation</h3>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Transportation</h3>
                         <p class="text-gray-600">Airlines, railways, and other transport staff uniforms</p>
                     </div>
                 </div>
@@ -284,140 +518,348 @@
         </section>
 
         <!-- Why Choose Us -->
-        <section class="py-16 bg-gray-50">
+        <section class="py-20 bg-blue-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose LO Uniforms</h2>
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up" data-aos-duration="800">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full mb-6">
+                        Our Advantages
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">Why Choose LO Uniforms</h2>
+                    <p class="text-gray-600 text-lg">We stand apart through our commitment to quality, professionalism,
+                        and customer satisfaction.</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-star"></i>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-delay="100">
+                        <div class="mb-6">
+                            <div class="bg-blue-600 text-white rounded-full p-4 inline-block">
+                                <i class="fas fa-star text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800">Premium Quality</h3>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Premium Quality</h3>
                         <p class="text-gray-600">
                             We use only the finest materials and exacting manufacturing standards to ensure our uniforms
                             withstand daily wear while maintaining their appearance.
                         </p>
+                        <div class="mt-6 border-t border-gray-100 pt-6">
+                            <div class="flex items-center">
+                                <div class="flex space-x-1">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-500">Trusted by 500+ clients</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-user-tie"></i>
+                    <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-delay="200">
+                        <div class="mb-6">
+                            <div class="bg-blue-600 text-white rounded-full p-4 inline-block">
+                                <i class="fas fa-user-tie text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800">Professional Image</h3>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Professional Image</h3>
                         <p class="text-gray-600">
                             Our designs focus on creating a polished, professional image that represents your
                             organization's values and enhances your brand presence.
                         </p>
+                        <div class="mt-6 border-t border-gray-100 pt-6">
+                            <div class="text-sm text-gray-500">
+                                <i class="fas fa-check text-green-500 mr-2"></i> Brand consistency across all
+                                departments
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-thumbs-up"></i>
+                    <div class="bg-white p-8 rounded-xl shadow-md" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-delay="300">
+                        <div class="mb-6">
+                            <div class="bg-blue-600 text-white rounded-full p-4 inline-block">
+                                <i class="fas fa-thumbs-up text-3xl"></i>
                             </div>
-                            <h3 class="text-xl font-bold text-gray-800">Comfort Focused</h3>
                         </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Comfort Focused</h3>
                         <p class="text-gray-600">
                             We prioritize employee comfort with breathable fabrics, ergonomic designs, and consideration
                             for the specific requirements of different working environments.
                         </p>
+                        <div class="mt-6 border-t border-gray-100 pt-6">
+                            <div class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80"
+                                    class="w-8 h-8 rounded-full mr-2 object-cover">
+                                <div>
+                                    <p class="text-sm text-gray-800 font-medium">James Wilson</p>
+                                    <p class="text-xs text-gray-500">CEO, Sunset Hotels</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Row -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="flex items-center justify-center" data-aos="fade-up" data-aos-duration="600"
+                        data-aos-delay="100">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-clock text-4xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800">Fast Delivery</h4>
+                            <p class="text-gray-600 text-sm">Quick turnaround times</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center" data-aos="fade-up" data-aos-duration="600"
+                        data-aos-delay="200">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-hand-holding-heart text-4xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800">Customer Support</h4>
+                            <p class="text-gray-600 text-sm">Dedicated assistance</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center" data-aos="fade-up" data-aos-duration="600"
+                        data-aos-delay="300">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-medal text-4xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800">Quality Assurance</h4>
+                            <p class="text-gray-600 text-sm">Rigorous quality control</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center" data-aos="fade-up" data-aos-duration="600"
+                        data-aos-delay="400">
+                        <div class="text-blue-600 mr-4">
+                            <i class="fas fa-recycle text-4xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold text-gray-800">Sustainability</h4>
+                            <p class="text-gray-600 text-sm">Eco-friendly practices</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section class="py-16 bg-blue-800 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6">Ready to Outfit Your Team?</h2>
-                <p class="text-xl max-w-3xl mx-auto mb-8">
-                    Contact LO Uniforms today to discuss your organization's uniform needs and receive a customized
-                    solution.
-                </p>
-                <a href="../contact.html"
-                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Get
-                    a Quote</a>
+        <!-- CTA Section -->
+        <section class="py-20 relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700"></div>
+            <div
+                class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80')] bg-cover bg-center">
+            </div>
+            <div class="absolute inset-0 bg-blue-900 opacity-70"></div>
+
+            <div class="container mx-auto px-4 relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Outfit Your Team?</h2>
+                    <p class="text-xl text-blue-100 mb-10 max-w-3xl mx-auto">
+                        Contact LO Uniforms today to discuss your organization's uniform needs and receive a customized
+                        solution tailored to your specific requirements.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="../contact.html"
+                            class="bg-white text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-lg font-medium transition duration-300 shadow-lg inline-flex items-center justify-center">
+                            <i class="fas fa-envelope-open-text mr-2"></i>
+                            Get a Quote
+                        </a>
+                        <a href="tel:+123456789"
+                            class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-medium transition duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-phone-alt mr-2"></i>
+                            Call Us Now
+                        </a>
+                    </div>
+                    
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white pt-16 pb-6">
+        <footer class="bg-gray-900 text-white pt-20 pb-6">
             <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
-                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                        <h3 class="text-2xl font-bold mb-6">BOD Holdings</h3>
+                        <p class="text-gray-400 mb-6">Building a diverse portfolio of successful businesses across
                             multiple sectors.</p>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#"
+                                class="bg-gray-800 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-gray-800 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-gray-800 hover:bg-blue-800 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-gray-800 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                         </div>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
-                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
-                            </li>
-                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
-                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
-                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
-                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <h3 class="text-xl font-bold mb-6">Quick Links</h3>
+                        <ul class="space-y-3">
+                            <li><a href="../index.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> Home
+                                </a></li>
+                            <li><a href="../about.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> About
+                                </a></li>
+                            <li><a href="../subsidiaries.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> Subsidiaries
+                                </a></li>
+                            <li><a href="../sectors.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> Sectors
+                                </a></li>
+                            <li><a href="../news.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> News
+                                </a></li>
+                            <li><a href="../careers.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> Careers
+                                </a></li>
+                            <li><a href="../contact.html"
+                                    class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                    <i class="fas fa-chevron-right text-xs mr-2 text-blue-500"></i> Contact
+                                </a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                        <ul class="space-y-2">
+                        <h3 class="text-xl font-bold mb-6">Contact Info</h3>
+                        <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                                <div class="bg-blue-800 rounded-full p-2 mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-sm"></i>
+                                </div>
                                 <span class="text-gray-400">123 Business Avenue, City, Country</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
+                                <div class="bg-blue-800 rounded-full p-2 mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-phone text-sm"></i>
+                                </div>
                                 <span class="text-gray-400">+1 (123) 456-7890</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                                <div class="bg-blue-800 rounded-full p-2 mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-envelope text-sm"></i>
+                                </div>
                                 <span class="text-gray-400">info@bodholdings.com</span>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Subscribe</h3>
+                        <h3 class="text-xl font-bold mb-6">Subscribe</h3>
                         <p class="text-gray-400 mb-4">Stay updated with our latest news and announcements.</p>
                         <form class="flex flex-col space-y-3">
-                            <input type="email" placeholder="Your Email"
-                                class="px-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:border-blue-500">
+                            <div class="relative">
+                                <input type="email" placeholder="Your Email"
+                                    class="w-full px-4 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 pr-10">
+                                <i
+                                    class="fas fa-envelope absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                            </div>
                             <button type="submit"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300">Subscribe</button>
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg transition duration-300 flex items-center justify-center">
+                                <span>Subscribe</span>
+                                <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
                         </form>
                     </div>
                 </div>
 
-                <div class="border-t border-gray-800 pt-6">
+                <div class="border-t border-gray-800 pt-8">
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
                         <div class="flex space-x-6">
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy
+                                Policy</a>
+                            <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of
+                                Service</a>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
 
+        <!-- Scroll to top button -->
+        <button id="back-to-top"
+            class="fixed bottom-5 right-5 bg-blue-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-50">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <!-- Base Scripts -->
         <script src="../js/script.js"></script>
+
+        <!-- AOS Animation Library -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- Custom Page Scripts -->
+        <script>
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Back to top button
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Smooth scroll for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
     </body>
 
 </html>

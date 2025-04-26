@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 
     <head>
         <meta charset="UTF-8">
@@ -7,33 +7,239 @@
         <title>ASAP Maintenance & Operations - BOD Holdings</title>
         <meta name="description"
             content="ASAP Maintenance & Operations (مؤسسة اسرع وقت ممكن للتشعيل والصيانة) provides prompt and reliable maintenance and operation services.">
+        <!-- Modern CSS Framework -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <!-- AOS Animation Library -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- Custom styles -->
         <link rel="stylesheet" href="../css/styles.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- Updated Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+        <!-- Custom animations CSS -->
+        <style>
+            /* Prevent horizontal scrolling */
+            html,
+            body {
+                overflow-x: hidden;
+                width: 100%;
+                position: relative;
+            }
+
+            /* Modern smooth transitions */
+            .transition-all {
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* Gradient overlay for images */
+            .gradient-overlay {
+                background: linear-gradient(to right, rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.7));
+            }
+
+            /* Modern card hover effects */
+            .service-card {
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+                overflow: hidden;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+
+            .service-card .card-icon {
+                transition: transform 0.5s ease;
+            }
+
+            .service-card:hover .card-icon {
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            /* Fixed header shadow effect on scroll */
+            .header-shadow {
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+
+            /* Modern button with hover effect */
+            .btn-modern {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                transition: all 0.4s ease;
+            }
+
+            .btn-modern::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                transition: all 0.4s ease;
+                z-index: -1;
+            }
+
+            .btn-modern:hover::before {
+                left: 0;
+            }
+
+            /* Sticky header behavior */
+            .sticky-header {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                animation: slideDown 0.5s ease;
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(5px);
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                }
+
+                to {
+                    transform: translateY(0);
+                }
+            }
+
+            /* Loading animation */
+            .page-loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                transition: opacity 0.5s ease, visibility 0.5s ease;
+            }
+
+            .loader-hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .loader-logo {
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.1);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            /* Fix for background elements causing overflow */
+            .absolute {
+                max-width: 100vw;
+            }
+
+            /* Fix for SVG path causing overflow */
+            svg {
+                max-width: 100%;
+            }
+
+            /* Fix for negative margins causing overflow */
+            @media (max-width: 768px) {
+
+                .absolute.-right-5,
+                .absolute.-left-5,
+                .absolute.-mr-32,
+                .absolute.-ml-32,
+                .absolute.-mt-32,
+                .absolute.-mb-32 {
+                    right: 0;
+                    left: 0;
+                    margin: 0;
+                }
+            }
+        </style>
     </head>
 
-    <body class="font-sans">
+    <body class="font-sans overflow-x-hidden">
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="loader-logo">
+                <span class="text-4xl font-bold text-blue-800">ASAP</span>
+                <div class="mt-3 text-blue-600">Loading...</div>
+            </div>
+        </div>
+
         <!-- Header -->
-        <header class="bg-white shadow-md sticky top-0 z-50">
+        <header class="bg-white shadow-md sticky top-0 z-50 transition-all" id="main-header">
             <div class="container mx-auto px-4 py-3 flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="../index.html" class="text-2xl font-bold text-blue-800">BOD</a>
+                    <a href="../index.html" class="text-2xl font-bold text-blue-800 hover:text-blue-600 transition-all">
+                        <span class="inline-block transform hover:scale-105 transition-all">BOD</span>
+                    </a>
                 </div>
 
                 <nav class="hidden md:flex space-x-8">
-                    <a href="../index.html" class="text-gray-800 hover:text-blue-600 font-medium">Home</a>
-                    <a href="../about.html" class="text-gray-800 hover:text-blue-600 font-medium">About</a>
+                    <a href="../index.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="../about.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        About
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                     <a href="../subsidiaries.html"
-                        class="text-blue-800 hover:text-blue-600 font-medium">Subsidiaries</a>
-                    <a href="../sectors.html" class="text-gray-800 hover:text-blue-600 font-medium">Sectors</a>
-                    <a href="../news.html" class="text-gray-800 hover:text-blue-600 font-medium">News</a>
-                    <a href="../careers.html" class="text-gray-800 hover:text-blue-600 font-medium">Careers</a>
-                    <a href="../contact.html" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a>
+                        class="text-blue-800 hover:text-blue-600 font-medium relative group transition-all">
+                        Subsidiaries
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all"></span>
+                    </a>
+                    <a href="../sectors.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        Sectors
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="../news.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="../careers.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        Careers
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="../contact.html"
+                        class="text-gray-800 hover:text-blue-600 font-medium relative group transition-all">
+                        Contact
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </nav>
 
                 <div class="flex items-center space-x-4">
-                    <button id="language-toggle" class="text-blue-800 hover:text-blue-600">EN | عربي</button>
-                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+                    <button id="language-toggle"
+                        class="text-blue-800 hover:text-blue-600 transition-all px-3 py-1 border border-transparent hover:border-blue-200 rounded-md">EN
+                        | عربي</button>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none transition-all">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -43,76 +249,134 @@
                 </div>
             </div>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
-                <a href="../index.html" class="block py-2 text-gray-800 hover:text-blue-600">Home</a>
-                <a href="../about.html" class="block py-2 text-gray-800 hover:text-blue-600">About</a>
-                <a href="../subsidiaries.html" class="block py-2 text-blue-800 hover:text-blue-600">Subsidiaries</a>
-                <a href="../sectors.html" class="block py-2 text-gray-800 hover:text-blue-600">Sectors</a>
-                <a href="../news.html" class="block py-2 text-gray-800 hover:text-blue-600">News</a>
-                <a href="../careers.html" class="block py-2 text-gray-800 hover:text-blue-600">Careers</a>
-                <a href="../contact.html" class="block py-2 text-gray-800 hover:text-blue-600">Contact</a>
+            <!-- Mobile Menu (with transition) -->
+            <div id="mobile-menu"
+                class="hidden md:hidden bg-white px-4 py-2 shadow-md overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                <a href="../index.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">Home</a>
+                <a href="../about.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">About</a>
+                <a href="../subsidiaries.html"
+                    class="block py-2 text-blue-800 hover:text-blue-600 transition-all hover:pl-2">Subsidiaries</a>
+                <a href="../sectors.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">Sectors</a>
+                <a href="../news.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">News</a>
+                <a href="../careers.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">Careers</a>
+                <a href="../contact.html"
+                    class="block py-2 text-gray-800 hover:text-blue-600 transition-all hover:pl-2">Contact</a>
             </div>
         </header>
 
-        <!-- Banner -->
-        <section class="relative bg-blue-900 text-white py-20">
+        <!-- Banner with Parallax Effect -->
+        <section class="relative bg-blue-900 text-white py-32 overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
-            <div class="absolute inset-0 bg-[url('../images/ASAP%20Company.jpg')] bg-cover bg-center mix-blend-overlay">
+            <div class="absolute inset-0 bg-[url('../images/ASAP%20Comapny.jpg')] bg-cover bg-center mix-blend-overlay"
+                id="parallax-bg"
+                style="transform: translateY(0); background-size: contain; background-repeat: no-repeat; background-position: center;">
             </div>
+            <div class="absolute inset-0 bg-black opacity-50"></div>
             <div class="container mx-auto px-4 relative z-10">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">ASAP Maintenance & Operations</h1>
-                <p class="text-xl max-w-3xl">مؤسسة اسرع وقت ممكن للتشعيل والصيانة - Swift and reliable maintenance and
-                    operation solutions for all your facility needs.</p>
+                <div data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">ASAP <span
+                            class="text-blue-300">Maintenance</span> & Operations</h1>
+                    <div class="h-1 w-32 bg-blue-400 mb-6"></div>
+                    <p class="text-xl max-w-3xl mb-8 text-blue-50">مؤسسة اسرع وقت ممكن للتشعيل والصيانة - Swift and
+                        reliable maintenance and
+                        operation solutions for all your facility needs.</p>
+                    <a href="#services"
+                        class="btn-modern bg-white text-blue-800 hover:bg-blue-50 px-8 py-3 rounded-md font-medium inline-block transition-all">
+                        Explore Our Services
+                        <i class="fas fa-arrow-right ml-2 transition-all group-hover:ml-3"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated elements -->
+            <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="max-width: 100%;">
+                <svg class="relative block w-full h-16 text-white" viewBox="0 0 1200 120" preserveAspectRatio="none"
+                    style="max-width: 100vw;">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V100C0,67,57.55,56.48,121.39,56.44Z"
+                        fill="currentColor"></path>
+                </svg>
             </div>
         </section>
 
         <!-- Company Overview -->
-        <section class="py-16 bg-white">
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2">
-                        <img src="../images/ASAP%20Company.jpg" alt="ASAP Maintenance & Operations Logo"
-                            class="rounded-lg shadow-xl w-full">
+                    <div class="lg:w-1/2 md:w-3/4 mx-auto max-w-md" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="relative">
+                            <img src="../images/ASAP%20Comapny.jpg" alt="ASAP Maintenance & Operations Logo"
+                                class="rounded-lg shadow-xl w-full h-auto relative z-10 transform transition-all duration-700 hover:scale-105 object-cover object-center"
+                                style="max-height: 350px;">
+                            <div class="absolute -bottom-5 -right-5 w-64 h-64 bg-blue-100 rounded-lg hidden lg:block">
+                            </div>
+                            <div class="absolute -top-5 -left-5 w-32 h-32 bg-blue-50 rounded-lg hidden lg:block"></div>
+                        </div>
                     </div>
-                    <div class="lg:w-1/2">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-6">About ASAP Maintenance</h2>
-                        <p class="text-gray-600 mb-4">
-                            مؤسسة اسرع وقت ممكن للتشعيل والصيانة (ASAP Maintenance & Operations) is a leading provider
-                            of
-                            comprehensive maintenance and operational services for commercial, residential, and
-                            industrial facilities across the region.
-                        </p>
-                        <p class="text-gray-600 mb-6">
-                            Our name reflects our commitment to delivering prompt, efficient services that minimize
-                            downtime and ensure the optimal functioning of your facilities. With a team of skilled
-                            technicians and industry experts, we provide innovative solutions to meet all your
-                            maintenance and operational needs.
-                        </p>
-                        <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
-                            <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Preventive Maintenance Programs</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Emergency Repair Services</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Facility Operations Management</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">MEP Systems Maintenance</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
-                                    <span class="text-gray-700">Maintenance Contract Services</span>
-                                </li>
-                            </ul>
+                    <div class="lg:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="lg:pl-8">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6 relative">
+                                About ASAP Maintenance
+                                <span class="absolute bottom-0 left-0 w-16 h-1 bg-blue-600"></span>
+                            </h2>
+                            <p class="text-gray-600 mb-4 text-lg">
+                                مؤسسة اسرع وقت ممكن للتشعيل والصيانة (ASAP Maintenance & Operations) is a leading
+                                provider
+                                of comprehensive maintenance and operational services for commercial, residential, and
+                                industrial facilities across the region.
+                            </p>
+                            <p class="text-gray-600 mb-6 text-lg">
+                                Our name reflects our commitment to delivering prompt, efficient services that minimize
+                                downtime and ensure the optimal functioning of your facilities. With a team of skilled
+                                technicians and industry experts, we provide innovative solutions to meet all your
+                                maintenance and operational needs.
+                            </p>
+                            <div
+                                class="bg-gradient-to-r from-blue-50 to-white p-8 rounded-lg border-l-4 border-blue-600 shadow-sm transition-all hover:shadow-lg">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">Our Core Services</h3>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start transition-all hover:translate-x-1">
+                                        <span
+                                            class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-check text-blue-600 text-sm"></i>
+                                        </span>
+                                        <span class="text-gray-700">Preventive Maintenance Programs</span>
+                                    </li>
+                                    <li class="flex items-start transition-all hover:translate-x-1">
+                                        <span
+                                            class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-check text-blue-600 text-sm"></i>
+                                        </span>
+                                        <span class="text-gray-700">Emergency Repair Services</span>
+                                    </li>
+                                    <li class="flex items-start transition-all hover:translate-x-1">
+                                        <span
+                                            class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-check text-blue-600 text-sm"></i>
+                                        </span>
+                                        <span class="text-gray-700">Facility Operations Management</span>
+                                    </li>
+                                    <li class="flex items-start transition-all hover:translate-x-1">
+                                        <span
+                                            class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-check text-blue-600 text-sm"></i>
+                                        </span>
+                                        <span class="text-gray-700">MEP Systems Maintenance</span>
+                                    </li>
+                                    <li class="flex items-start transition-all hover:translate-x-1">
+                                        <span
+                                            class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+                                            <i class="fas fa-check text-blue-600 text-sm"></i>
+                                        </span>
+                                        <span class="text-gray-700">Maintenance Contract Services</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,94 +384,147 @@
         </section>
 
         <!-- Services -->
-        <section class="py-16 bg-gray-50">
+        <section id="services" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wider">What We Offer</span>
+                    <h2 class="text-4xl font-bold text-gray-800 mt-2 mb-4">Our Professional Services</h2>
+                    <div class="h-1 w-24 bg-blue-600 mx-auto"></div>
+                    <p class="max-w-2xl mx-auto mt-6 text-gray-600">Comprehensive maintenance and operational solutions
+                        tailored to meet your facility management needs.</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- Service 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-tools text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-tools text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Mechanical Maintenance</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 Comprehensive maintenance services for HVAC systems, pumps, generators, elevators, and
                                 other mechanical equipment to ensure optimal performance and longevity.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-bolt text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-bolt text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Electrical Services</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 Electrical system installation, repair, and maintenance including power distribution,
                                 lighting, emergency systems, and energy efficiency solutions.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-tint text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="300">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-tint text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Plumbing Solutions</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 Complete plumbing services including installation, repair, and maintenance of water
                                 supply, drainage systems, and sanitary fixtures for commercial and residential
                                 properties.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 4 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-building text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="400">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-building text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Facility Management</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 Comprehensive facility management services including daily operations, vendor
                                 coordination, resource allocation, and quality control for optimal facility performance.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 5 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-file-contract text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="500">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-file-contract text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Maintenance Contracts</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 Customized maintenance contract packages that provide regular scheduled maintenance,
                                 priority response, and cost-effective solutions for long-term facility care.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
 
                     <!-- Service 6 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-blue-800 text-white flex items-center justify-center">
-                            <i class="fas fa-clipboard-check text-6xl"></i>
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden" data-aos="fade-up"
+                        data-aos-delay="600">
+                        <div
+                            class="h-48 bg-gradient-to-r from-blue-800 to-blue-600 text-white flex items-center justify-center overflow-hidden">
+                            <i class="fas fa-clipboard-check text-6xl card-icon"></i>
                         </div>
-                        <div class="p-6">
+                        <div class="p-8">
                             <h3 class="text-xl font-bold text-gray-800 mb-3">Emergency Response</h3>
+                            <div class="w-12 h-1 bg-blue-600 mb-4"></div>
                             <p class="text-gray-600">
                                 24/7 emergency response services for critical systems failures, equipment breakdowns,
-                                and
-                                urgent repair needs to minimize downtime and disruption.
+                                and urgent repair needs to minimize downtime and disruption.
                             </p>
+                            <a href="#"
+                                class="inline-block mt-6 text-blue-600 font-medium hover:text-blue-800 transition-all">
+                                Learn More <i
+                                    class="fas fa-arrow-right ml-1 transition-transform duration-300 transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -215,70 +532,92 @@
         </section>
 
         <!-- Industries We Serve -->
-        <section class="py-16 bg-white">
+        <section class="py-20 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Industries We Serve</h2>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wider">Our Expertise</span>
+                    <h2 class="text-4xl font-bold text-gray-800 mt-2 mb-4">Industries We Serve</h2>
+                    <div class="h-1 w-24 bg-blue-600 mx-auto"></div>
+                    <p class="max-w-2xl mx-auto mt-6 text-gray-600">Our maintenance solutions are tailored to meet the
+                        unique needs of various industries.</p>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-hotel"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="100">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-hotel text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Hospitality</h3>
                         <p class="text-gray-600">Hotels, resorts, and restaurants</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-hospital"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="200">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-hospital text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Healthcare</h3>
                         <p class="text-gray-600">Hospitals, clinics, and medical facilities</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-building"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="300">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-building text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Commercial</h3>
                         <p class="text-gray-600">Office buildings and retail spaces</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-industry"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="400">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-industry text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Industrial</h3>
                         <p class="text-gray-600">Manufacturing plants and warehouses</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-graduation-cap"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="500">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Education</h3>
                         <p class="text-gray-600">Schools, universities, and educational institutions</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-home"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="600">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-home text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Residential</h3>
                         <p class="text-gray-600">Apartment complexes and residential communities</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-shopping-mall"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="700">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-shopping-cart text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Retail</h3>
                         <p class="text-gray-600">Shopping centers and retail establishments</p>
                     </div>
 
-                    <div class="bg-gray-50 p-6 rounded-lg text-center">
-                        <div class="text-blue-800 text-4xl mb-4">
-                            <i class="fas fa-warehouse"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 text-center transition-all hover:shadow-md hover:-translate-y-1"
+                        data-aos="zoom-in" data-aos-delay="800">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 mb-6 bg-blue-100 text-blue-800 rounded-full">
+                            <i class="fas fa-warehouse text-2xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Logistics</h3>
                         <p class="text-gray-600">Warehouses and distribution centers</p>
@@ -288,15 +627,28 @@
         </section>
 
         <!-- Why Choose Us -->
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose ASAP Maintenance</h2>
+        <section class="py-20 bg-gray-50 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full opacity-50"
+                style="transform: translateX(25%); transform: translateY(-25%);"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full opacity-50"
+                style="transform: translateX(-25%); transform: translateY(25%);"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-blue-600 font-semibold uppercase tracking-wider">Our Advantages</span>
+                    <h2 class="text-4xl font-bold text-gray-800 mt-2 mb-4">Why Choose ASAP Maintenance</h2>
+                    <div class="h-1 w-24 bg-blue-600 mx-auto"></div>
+                    <p class="max-w-2xl mx-auto mt-6 text-gray-600">We pride ourselves on delivering exceptional service
+                        with these key differentiators:</p>
+                </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-bolt"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-full p-4 mr-4">
+                                <i class="fas fa-bolt text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800">Rapid Response</h3>
                         </div>
@@ -304,12 +656,27 @@
                             Our team is available 24/7 to address emergency maintenance needs with quick response times,
                             minimizing downtime and disruption to your operations.
                         </p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">24/7 availability</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Quick response teams</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Minimize disruption</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-user-tie"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-full p-4 mr-4">
+                                <i class="fas fa-user-tie text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800">Skilled Technicians</h3>
                         </div>
@@ -317,12 +684,27 @@
                             Our maintenance professionals are certified, experienced, and continuously trained in the
                             latest technologies and best practices in the industry.
                         </p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Certified professionals</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Continuous training</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Industry expertise</span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-blue-800 text-white rounded-full p-3 mr-4">
-                                <i class="fas fa-cog"></i>
+                    <div class="bg-white p-8 rounded-lg shadow-md transition-all hover:shadow-xl hover:-translate-y-1"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-full p-4 mr-4">
+                                <i class="fas fa-cog text-xl"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800">Comprehensive Solutions</h3>
                         </div>
@@ -330,22 +712,83 @@
                             We offer end-to-end maintenance and operational services, providing a single point of
                             contact for all your facility management needs.
                         </p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">End-to-end services</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Single point of contact</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Customized solutions</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8 text-center" data-aos="fade-up"
+                    data-aos-delay="400">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-blue-600 mb-2 counter-value" data-count="15">0</div>
+                        <p class="text-gray-700 font-medium">Years Experience</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-blue-600 mb-2 counter-value" data-count="500">0</div>
+                        <p class="text-gray-700 font-medium">Projects Completed</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-blue-600 mb-2 counter-value" data-count="50">0</div>
+                        <p class="text-gray-700 font-medium">Team Members</p>
+                    </div>
+
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <div class="text-4xl font-bold text-blue-600 mb-2 counter-value" data-count="98">0</div>
+                        <p class="text-gray-700 font-medium">Customer Satisfaction %</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA -->
-        <section class="py-16 bg-blue-800 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-6">Ready to Optimize Your Facility Operations?</h2>
-                <p class="text-xl max-w-3xl mx-auto mb-8">
-                    Contact ASAP Maintenance & Operations today to discuss your maintenance needs and discover how our
-                    services can enhance your facility's performance.
-                </p>
-                <a href="../contact.html"
-                    class="inline-block bg-white text-blue-800 hover:bg-gray-100 px-8 py-4 rounded-md font-medium transition duration-300">Request
-                    a Quote</a>
+        <section class="py-20 bg-gradient-to-r from-blue-800 to-blue-600 text-white relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <svg class="absolute left-0 top-0 h-full w-full opacity-10" preserveAspectRatio="xMidYMid slice"
+                    viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(300,300)">
+                        <path
+                            d="M125.6,-176.2C162.9,-148.4,193.6,-110.3,202.7,-67.7C211.8,-25.2,199.2,21.7,181,64.3C162.8,106.9,139,145.2,104.3,168.5C69.6,191.7,24.1,200,0.1,199.8C-23.9,199.7,-47.8,191.1,-72.2,176.5C-96.6,161.9,-121.5,141.2,-141.2,114.5C-160.9,87.8,-175.5,55.1,-173.7,23.7C-171.9,-7.7,-153.7,-37.9,-139.5,-72.3C-125.3,-106.8,-115.2,-145.6,-89.9,-176.9C-64.6,-208.2,-24.1,-232,16.9,-252.7C57.9,-273.5,115.9,-291.2,146.3,-267.2C176.8,-243.2,179.7,-177.5,211.1,-134C242.5,-90.5,313.3,-69.1,341.5,-32.1C369.7,4.9,355.2,57.5,321.8,92.8C288.4,128.1,236,146.1,190.6,172.6C145.2,199.1,106.7,234.2,61.8,249.3C16.9,264.5,-34.3,259.7,-77.8,241.8C-121.3,223.9,-157,193,-176.2,154.8C-195.4,116.6,-198.1,71.1,-213.9,23.4C-229.8,-24.3,-258.8,-74.1,-248.7,-113.3C-238.6,-152.5,-189.5,-181,-143.9,-207.6C-98.4,-234.2,-56.4,-259,0.3,-259.4C57,-259.9,127.3,-235.9,170.9,-195.8C214.5,-155.7,231.4,-99.5,250.9,-50.8C270.4,-2.1,292.3,39.1,284,72.8C275.7,106.6,237.2,132.9,197.2,156.8C157.3,180.7,115.8,202.2,75.7,209.9C35.5,217.7,-4.3,211.7,-47.1,204.6C-89.9,197.6,-135.7,189.4,-166.4,164.2C-197.1,139,-212.7,96.8,-210.8,56.6C-209,16.5,-189.7,-21.6,-177.7,-63.2C-165.7,-104.8,-161.1,-149.9,-135.9,-183.6C-110.7,-217.4,-65,-239.9,-17.3,-244C30.3,-248.1,79.8,-233.8,117.5,-206.8C155.2,-179.8,181.1,-140.1,209.3,-101.5C237.5,-63,268,-25.4,269.2,12.4C270.5,50.3,242.3,88.3,209.8,119.4C177.3,150.5,140.3,174.6,100.5,195.8C60.7,217,18.1,235.2,-23.4,238.7C-64.9,242.2,-105.3,231,-135.7,207.8C-166.1,184.6,-200.1,150.4,-228.3,113.4C-254.1,83.3,-263.9,38.7,-268.3,-8.9C-272.7,-56.5,-271.7,-107,-242.5,-141.6C-213.4,-176.2,-156.1,-194.9,-109.6,-231.1C-63.1,-267.3,-27.3,-321,12.1,-326.9C51.5,-332.8,94.6,-290.9,132.6,-258C170.6,-225.1,203.4,-201.2,239.8,-177.5C276.1,-153.8,316,-130.3,331.3,-97.5C346.6,-64.6,337.3,-22.4,329.9,21.3C322.5,65,317,110.2,291.8,142.5C266.6,174.8,221.6,194.2,181.7,219.9C141.7,245.6,106.6,277.6,64.3,290.2C22,302.7,-27.6,295.9,-76.2,285.9C-124.8,275.9,-172.4,262.6,-209.2,235.5C-246,208.3,-272,167.3,-289.1,122.9C-306.3,78.6,-314.6,30.8,-311.5,-15.2C-308.3,-61.2,-293.6,-105.3,-262.5,-134.1C-231.3,-162.9,-183.7,-176.4,-141.3,-196.6C-98.8,-216.8,-61.4,-243.7,-14.3,-271.3C32.8,-298.9,89.6,-327.1,142.6,-313.9C195.6,-300.6,244.8,-245.9,269.4,-192.4C294.1,-138.9,294.1,-86.6,281,-41.5C267.8,3.6,241.4,41.5,220.7,81C200,120.5,184.9,161.5,151.8,183.5C118.8,205.4,67.7,208.3,21.1,224.9C-25.5,241.6,-67.5,272.1,-112.8,266.4C-158.1,260.8,-206.7,219.1,-233.7,173.3C-260.7,127.4,-266.2,77.3,-271.2,25.7"
+                            fill="#ffffff"></path>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+                    <h2 class="text-4xl font-bold mb-6">Ready to Optimize Your Facility Operations?</h2>
+                    <div class="h-1 w-24 bg-white mx-auto mb-8 opacity-80"></div>
+                    <p class="text-xl max-w-3xl mx-auto mb-10 opacity-90">
+                        Contact ASAP Maintenance & Operations today to discuss your maintenance needs and discover how
+                        our
+                        services can enhance your facility's performance.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="../contact.html"
+                            class="btn-modern inline-block bg-white text-blue-800 hover:bg-blue-50 px-8 py-4 rounded-md font-medium transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-file-alt mr-2"></i> Request a Quote
+                        </a>
+                        <a href="tel:+123456789"
+                            class="btn-modern inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-md font-medium transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone-alt mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -353,54 +796,109 @@
         <footer class="bg-gray-900 text-white pt-16 pb-6">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">BOD Holdings</h3>
-                        <p class="text-gray-400 mb-4">Building a diverse portfolio of successful businesses across
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold mb-6 relative inline-block">
+                            BOD Holdings
+                            <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500"></span>
+                        </h3>
+                        <p class="text-gray-400 mb-6">Building a diverse portfolio of successful businesses across
                             multiple sectors.</p>
                         <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook text-lg"></i>
+                            </a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="../index.html" class="text-gray-400 hover:text-white">Home</a></li>
-                            <li><a href="../about.html" class="text-gray-400 hover:text-white">About</a></li>
-                            <li><a href="../subsidiaries.html" class="text-gray-400 hover:text-white">Subsidiaries</a>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold mb-6 relative inline-block">
+                            Quick Links
+                            <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500"></span>
+                        </h3>
+                        <ul class="space-y-3">
+                            <li><a href="../index.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">Home</a>
                             </li>
-                            <li><a href="../sectors.html" class="text-gray-400 hover:text-white">Sectors</a></li>
-                            <li><a href="../news.html" class="text-gray-400 hover:text-white">News</a></li>
-                            <li><a href="../careers.html" class="text-gray-400 hover:text-white">Careers</a></li>
-                            <li><a href="../contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Contact Info</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
-                                <span class="text-gray-400">123 Business Avenue, City, Country</span>
+                            <li><a href="../about.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">About</a>
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-phone mt-1 mr-3 text-gray-400"></i>
-                                <span class="text-gray-400">+1 (123) 456-7890</span>
+                            <li><a href="../subsidiaries.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">Subsidiaries</a>
                             </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
-                                <span class="text-gray-400">info@bodholdings.com</span>
+                            <li><a href="../sectors.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">Sectors</a>
+                            </li>
+                            <li><a href="../news.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">News</a>
+                            </li>
+                            <li><a href="../careers.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">Careers</a>
+                            </li>
+                            <li><a href="../contact.html"
+                                    class="text-gray-400 hover:text-white transition-colors duration-300 hover:pl-2 inline-block">Contact</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Emergency Service</h3>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-xl font-bold mb-6 relative inline-block">
+                            Contact Info
+                            <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500"></span>
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start group">
+                                <span
+                                    class="flex-shrink-0 bg-blue-900 p-2 rounded-full mr-3 group-hover:bg-blue-700 transition-all">
+                                    <i class="fas fa-map-marker-alt text-blue-300"></i>
+                                </span>
+                                <span class="text-gray-400 group-hover:text-white transition-colors duration-300">123
+                                    Business Avenue, City, Country</span>
+                            </li>
+                            <li class="flex items-start group">
+                                <span
+                                    class="flex-shrink-0 bg-blue-900 p-2 rounded-full mr-3 group-hover:bg-blue-700 transition-all">
+                                    <i class="fas fa-phone text-blue-300"></i>
+                                </span>
+                                <span class="text-gray-400 group-hover:text-white transition-colors duration-300">+1
+                                    (123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start group">
+                                <span
+                                    class="flex-shrink-0 bg-blue-900 p-2 rounded-full mr-3 group-hover:bg-blue-700 transition-all">
+                                    <i class="fas fa-envelope text-blue-300"></i>
+                                </span>
+                                <span
+                                    class="text-gray-400 group-hover:text-white transition-colors duration-300">info@bodholdings.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-xl font-bold mb-6 relative inline-block">
+                            Emergency Service
+                            <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500"></span>
+                        </h3>
                         <p class="text-gray-400 mb-4">Available 24/7 for urgent maintenance needs</p>
-                        <p class="text-white text-xl font-bold">Hotline: +1 (800) 123-4567</p>
+                        <div class="bg-blue-900 p-4 rounded-lg mb-4 transform transition-transform hover:scale-105">
+                            <p class="text-sm text-blue-300 mb-1">Call our support team</p>
+                            <p class="text-white text-xl font-bold">Hotline: +1 (800) 123-4567</p>
+                        </div>
+                        <a href="../contact.html"
+                            class="inline-block bg-blue-700 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition-colors duration-300">Contact
+                            Support</a>
                     </div>
                 </div>
 
@@ -408,15 +906,79 @@
                     <div class="flex flex-col md:flex-row justify-between items-center">
                         <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 BOD Holdings. All rights reserved.</p>
                         <div class="flex space-x-6">
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                            <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Privacy
+                                Policy</a>
+                            <a href="#"
+                                class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Terms of
+                                Service</a>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
 
+        <!-- Add AOS and other script libraries -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script src="../js/script.js"></script>
+        <script>
+            // Initialize AOS animations
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Page loader
+            window.addEventListener('load', function () {
+                const loader = document.querySelector('.page-loader');
+                setTimeout(function () {
+                    loader.classList.add('loader-hidden');
+                }, 800);
+            });
+
+            // Parallax effect for banner
+            window.addEventListener('scroll', function () {
+                const parallaxBg = document.getElementById('parallax-bg');
+                if (parallaxBg) {
+                    const scrollPosition = window.pageYOffset;
+                    parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+                }
+            });
+
+            // Sticky header effect
+            window.addEventListener('scroll', function () {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 50) {
+                    header.classList.add('header-shadow', 'sticky-header');
+                } else {
+                    header.classList.remove('header-shadow', 'sticky-header');
+                }
+            });
+
+            // Enhanced mobile menu animation
+            document.addEventListener('DOMContentLoaded', function () {
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', function () {
+                        if (mobileMenu.classList.contains('hidden')) {
+                            // Show menu
+                            mobileMenu.classList.remove('hidden');
+                            mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                            mobileMenu.classList.add('max-h-96', 'opacity-100');
+                        } else {
+                            // Hide menu
+                            mobileMenu.classList.add('max-h-0', 'opacity-0');
+                            mobileMenu.classList.remove('max-h-96', 'opacity-100');
+                            setTimeout(() => {
+                                mobileMenu.classList.add('hidden');
+                            }, 300); // Match transition duration
+                        }
+                    });
+                }
+            });
+        </script>
     </body>
 
 </html>
